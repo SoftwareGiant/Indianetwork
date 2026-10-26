@@ -194,7 +194,7 @@ const MEMBER_PROJECTS = [
     title: 'Residence Hall for Women, Bangalore',
     location: 'Bangalore, Karnataka',
     year: '1999',
-    image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&h=400&fit=crop&auto=format',
+    image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&h=400&fit=crop&auto=format',
     description: 'Construction of a residence hall for women by the Badaganadu Sangha, which provides hostel facilities free of cost to needy students.',
     impact: 'Rs. 93,150 donated',
   },

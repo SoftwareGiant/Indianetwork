@@ -49,8 +49,13 @@ const pageTitles: Record<string, string> = {
 }
 
 export default function Root() {
-  const { pathname } = useLocation()
-  useEffect(() => { window.scrollTo(0, 0) }, [pathname])
+  const { pathname, hash } = useLocation()
+  useEffect(() => {
+    // Honour #anchors (e.g. /projects/nyu-scholarship#apply); otherwise start at the top
+    const target = hash ? document.getElementById(hash.slice(1)) : null
+    if (target) setTimeout(() => target.scrollIntoView({ behavior: 'smooth' }), 100)
+    else window.scrollTo(0, 0)
+  }, [pathname, hash])
 
   useEffect(() => {
     const path = pathname.length > 1 ? pathname.replace(/\/+$/, '') : pathname

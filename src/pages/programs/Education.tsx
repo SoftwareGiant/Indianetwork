@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Link } from 'react-router';
 import { useInView } from '../../hooks/useInView';
 
@@ -178,85 +177,6 @@ function ImpactStats() {
   );
 }
 
-function ScholarshipForm() {
-  const { ref, inView } = useInView();
-  const [form, setForm] = useState({ name: '', dob: '', address: '', education: '', exam: '' });
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (form.name && form.dob && form.address && form.education && form.exam) {
-      setSubmitted(true);
-    }
-  };
-
-  const inputClass = "w-full px-4 py-3.5 rounded-xl text-gray-800 placeholder-gray-400 text-sm outline-none border focus:border-[#F47C20] transition-colors";
-  const inputStyle = { border: '1px solid rgba(13,43,69,0.15)', background: 'white' };
-  const labelClass = "text-sm mb-1.5 block";
-  const labelStyle = { color: '#0D2B45', fontWeight: 600 };
-
-  return (
-    <section style={{ background: '#FFF9F3' }} className="py-20">
-      <div
-        ref={ref}
-        className="max-w-2xl mx-auto px-6 transition-all duration-700"
-        style={{ opacity: inView ? 1 : 0, transform: inView ? 'translateY(0)' : 'translateY(30px)' }}
-      >
-        <h2 className="text-3xl font-extrabold text-center mb-3" style={{ color: '#0D2B45' }}>Interested in Scholarship Opportunities?</h2>
-        <p className="text-center text-gray-600 mb-10">Eligible students are encouraged to submit their details for scholarship consideration.</p>
-        <div className="bg-white rounded-2xl shadow-sm p-8">
-          {submitted ? (
-            <div className="text-center py-12">
-              <div className="text-6xl mb-4">✅</div>
-              <h3 className="text-2xl font-extrabold mb-2" style={{ color: '#0D2B45' }}>Thank You!</h3>
-              <p className="text-gray-600">Your interest has been received. Our team will review your details and reach out to you shortly.</p>
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit} className="flex flex-col gap-5">
-              <div>
-                <label className={labelClass} style={labelStyle}>Name <span style={{ color: '#F47C20' }}>*</span></label>
-                <input name="name" required value={form.name} onChange={handleChange} placeholder="Your full name" className={inputClass} style={inputStyle} />
-              </div>
-              <div>
-                <label className={labelClass} style={labelStyle}>Date of Birth <span style={{ color: '#F47C20' }}>*</span></label>
-                <input name="dob" type="date" required value={form.dob} onChange={handleChange} className={inputClass} style={inputStyle} />
-              </div>
-              <div>
-                <label className={labelClass} style={labelStyle}>Address <span style={{ color: '#F47C20' }}>*</span></label>
-                <textarea name="address" required value={form.address} onChange={handleChange} placeholder="Your current address" rows={3} className={inputClass + " resize-none"} style={inputStyle} />
-              </div>
-              <div>
-                <label className={labelClass} style={labelStyle}>Educational Background <span style={{ color: '#F47C20' }}>*</span></label>
-                <input name="education" required value={form.education} onChange={handleChange} placeholder="e.g. B.Tech Computer Science, IIT Bombay" className={inputClass} style={inputStyle} />
-              </div>
-              <div>
-                <label className={labelClass} style={labelStyle}>Exam Taken <span style={{ color: '#F47C20' }}>*</span></label>
-                <select name="exam" required value={form.exam} onChange={handleChange} className={inputClass} style={inputStyle}>
-                  <option value="">Select an exam</option>
-                  <option value="TOEFL">TOEFL</option>
-                  <option value="GRE">GRE</option>
-                  <option value="GMAT">GMAT</option>
-                </select>
-              </div>
-              <button
-                type="submit"
-                className="mt-2 py-3.5 rounded-full font-bold text-white transition-all hover:-translate-y-1 hover:scale-105"
-                style={{ background: '#F47C20' }}
-              >
-                Submit Interest
-              </button>
-            </form>
-          )}
-        </div>
-      </div>
-    </section>
-  );
-}
-
 function Cta() {
   const { ref, inView } = useInView();
   return (
@@ -274,7 +194,7 @@ function Cta() {
         <div className="flex flex-wrap justify-center gap-4">
           <Link to="/donate" className="px-8 py-3.5 rounded-full font-bold bg-white transition-all hover:-translate-y-1 hover:scale-105" style={{ color: '#F47C20' }}>Donate Now</Link>
           <Link to="/programs" className="px-8 py-3.5 rounded-full font-bold border-2 border-white text-white transition-all hover:-translate-y-1 hover:scale-105">All Programs</Link>
-          <Link to="/contact" className="px-8 py-3.5 rounded-full font-bold border-2 border-white text-white transition-all hover:-translate-y-1 hover:scale-105">Contact Us</Link>
+          <Link to="/projects/nyu-scholarship#apply" className="px-8 py-3.5 rounded-full font-bold border-2 border-white text-white transition-all hover:-translate-y-1 hover:scale-105">Apply for NYU Scholarship</Link>
         </div>
       </div>
     </section>
@@ -290,7 +210,6 @@ export default function EducationPage() {
       <WhoItSupports />
       <HowItWorks />
       <ImpactStats />
-      <ScholarshipForm />
       <Cta />
     </main>
   );

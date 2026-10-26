@@ -6,7 +6,7 @@ const project: PastProject = {
   year: '1999',
   category: 'Relief to Soldiers & Families',
   heroImage: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1800&h=800&fit=crop&auto=format',
-  overviewImage: 'https://images.unsplash.com/photo-1593113630400-ea4288922559?w=700&h=500&fit=crop&auto=format',
+  overviewImage: 'https://images.unsplash.com/photo-1593113598332-cd288d649433?w=700&h=500&fit=crop&auto=format',
   facts: [
     { label: 'Date', value: 'June – August 1999' },
     { label: 'Location', value: 'Karnataka, New Delhi, Srinagar & Udhampur' },
@@ -44,7 +44,7 @@ const project: PastProject = {
   ],
   gallery: [
     'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=400&h=300&fit=crop&auto=format',
-    'https://images.unsplash.com/photo-1593113630400-ea4288922559?w=400&h=300&fit=crop&auto=format',
+    'https://images.unsplash.com/photo-1593113598332-cd288d649433?w=400&h=300&fit=crop&auto=format',
     'https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=400&h=300&fit=crop&auto=format',
   ],
   quote: {
