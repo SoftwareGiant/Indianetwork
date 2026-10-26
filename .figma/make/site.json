@@ -1,5 +1,6 @@
 {
-  "description": "This web application streamlines task management for teams, enabling efficient collaboration and tracking of project progress in real-time.",
+  "title": "India Network Foundation",
+  "description": "India Network Foundation, founded by Dr. K.V. Rao in 1988, helps the Indian community through non-profit projects, disaster relief, health care for Indian travelers and travel grants across India and the United States.",
   "robots": {
     "index": false
   },
