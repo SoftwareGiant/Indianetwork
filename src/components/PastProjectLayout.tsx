@@ -15,6 +15,7 @@ export interface PastProject {
   gallery: string[]
   quote?: { text: string; author: string; role: string }
   list?: { title: string; intro: string; items: string[] }
+  related?: { label: string; to: string; text: string }
 }
 
 function StatCard({ value, label }: { value: string; label: string }) {
@@ -39,7 +40,7 @@ function Section({ children, className = '' }: { children: React.ReactNode; clas
   )
 }
 
-export default function PastProjectLayout({ project }: { project: PastProject }) {
+export default function PastProjectLayout({ project, children }: { project: PastProject; children?: React.ReactNode }) {
   const p = project
   return (
     <div style={{ background: '#FFF9F3' }}>
@@ -163,6 +164,19 @@ export default function PastProjectLayout({ project }: { project: PastProject })
                 ))}
               </div>
             </Section>
+          </div>
+        </section>
+      )}
+
+      {children}
+
+      {p.related && (
+        <section className="py-10 bg-white">
+          <div className="max-w-6xl mx-auto px-6">
+            <Link to={p.related.to} className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 rounded-2xl p-6 transition-colors hover:bg-white" style={{ background: '#FFF9F3', border: '1px solid rgba(244,124,32,0.25)' }}>
+              <span className="text-sm text-gray-600" style={{ fontFamily: 'Manrope, sans-serif' }}>{p.related.text}</span>
+              <span className="text-sm font-700 shrink-0" style={{ color: '#F47C20', fontFamily: 'Manrope, sans-serif' }}>{p.related.label} →</span>
+            </Link>
           </div>
         </section>
       )}

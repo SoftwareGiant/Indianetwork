@@ -32,6 +32,16 @@ const CATEGORIES: Category[] = ['All', 'Education', 'Community', 'Disaster Relie
 
 const PAST_PROJECTS = [
   {
+    title: 'Tsunami Relief Project — 2004',
+    category: 'Disaster Relief' as Category,
+    location: 'Andhra Pradesh & Tamil Nadu',
+    year: 2004,
+    image: 'https://images.unsplash.com/photo-1593113598332-cd288d649433?w=600&h=400&fit=crop&auto=format',
+    impact: "Children's education, orphans, livelihoods",
+    desc: 'A relief fund for tsunami victims in coastal Andhra Pradesh and Tamil Nadu, focused on education, homes for orphans, and nets and equipment for fishermen.',
+    slug: 'tsunami-relief-2004',
+  },
+  {
     title: 'Gujarat Earthquake Relief — 2001',
     category: 'Education' as Category,
     location: 'Bhuj & Kutch, Gujarat',
@@ -82,10 +92,20 @@ const PAST_PROJECTS = [
     slug: 'gujarat-cyclone-relief',
   },
   {
+    title: 'Andhra Pradesh Cyclone Relief — 1996',
+    category: 'Education' as Category,
+    location: 'East & West Godavari, AP',
+    year: 1996,
+    image: '/images/inf/ap-hsduvva1.jpg',
+    impact: 'Over 100 village schools helped',
+    desc: 'After the November 1996 cyclone, Dr. K.V. Rao visited 150 schools; INF supplied steel almirahs, laminated maps, water drums and roof sheets to rural schools.',
+    slug: 'andhra-pradesh-cyclone-relief-1996',
+  },
+  {
     title: 'Andhra Pradesh Community Projects',
     category: 'Community' as Category,
     location: 'Godavari Districts, AP',
-    year: 1998,
+    year: 1997,
     image: '/images/inf/andhra-duvva-1.jpg',
     impact: 'Schools & community centers',
     desc: 'School buildings, a community development center and girls high school repairs proposed for NRI sponsorship after the Andhra cyclone.',

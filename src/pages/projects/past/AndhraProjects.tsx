@@ -3,7 +3,7 @@ import PastProjectLayout, { type PastProject } from '../../../components/PastPro
 const project: PastProject = {
   title: 'Andhra Pradesh Community Projects',
   breadcrumb: 'Andhra Pradesh Projects',
-  year: '1998 – 2000',
+  year: '1996 – 1997',
   category: 'Education & Community',
   heroImage: '/images/inf/andhra-duvva-1.jpg',
   overviewImage: '/images/inf/andhra-komaravalli.jpg',
@@ -12,7 +12,7 @@ const project: PastProject = {
     { label: 'Focus', value: 'Schools, community centers & cyclone recovery' },
     { label: 'Oversight', value: 'INF Project Director in India' },
     { label: 'Admin Cost', value: '10% retained for accounting & IRS filing' },
-    { label: 'Status', value: 'Open for sponsorship' },
+    { label: 'Status', value: 'Proposed for sponsorship, 1996–97' },
   ],
   challenge: [
     'During our visit to cyclone-affected areas of Andhra Pradesh, community members presented several worthy projects. Schools were operating in rented buildings that were falling apart, and many roofs were lost to the cyclone — putting teachers and students at real risk.',
@@ -43,6 +43,11 @@ const project: PastProject = {
     { value: '$250+', label: 'Gifts Receive Tax Letter' },
   ],
   gallery: ['/images/inf/andhra-duvva-1.jpg', '/images/inf/andhra-duvva-2.jpg', '/images/inf/andhra-komaravalli.jpg', '/images/inf/andhra-cyclone96.jpg'],
+  related: {
+    text: 'These projects were presented to INF during its 1996 cyclone relief visit to Andhra Pradesh.',
+    label: 'Read about the 1996 Cyclone Relief',
+    to: '/projects/past/andhra-pradesh-cyclone-relief-1996',
+  },
   quote: {
     text: 'The India Network Foundation has a Project Director in India who takes personal responsibility in overseeing the implementation of the project according to the donor wishes and reports back what has been done.',
     author: 'India Network Foundation',

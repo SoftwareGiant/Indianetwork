@@ -69,7 +69,7 @@ const donationAmounts = [
   { usd: '$100', impact: 'Contributes to a mineral water plant for a rural village' },
   { usd: '$250', impact: 'Helps sponsor a school or community project in India' },
   { usd: '$500', impact: 'Supports school building repairs in Andhra Pradesh' },
-  { usd: '$2,500', impact: 'About the cost of building one mineral water plant (Rs. 2 Lakhs)' },
+  { usd: '$2,500', impact: 'Helps toward building a mineral water plant (construction costs about Rs. 2 Lakhs)' },
 ]
 
 function DonationForm() {

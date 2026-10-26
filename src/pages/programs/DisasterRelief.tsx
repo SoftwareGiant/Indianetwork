@@ -154,7 +154,7 @@ function ImpactStats() {
     { value: "1,000", label: "Families Fed in Orissa" },
     { value: "$100K+", label: "Raised for Gujarat Schools" },
     { value: "35", label: "Wounded Soldiers Aided" },
-    { value: "8", label: "Major Relief Efforts" },
+    { value: "9", label: "Major Relief Efforts" },
   ];
   return (
     <section className="py-20 bg-white">

@@ -6,6 +6,11 @@ const projectsSubmenu = [
   { label: 'INF Projects', to: '/projects/inf-projects', desc: 'Foundation-managed initiatives' },
   { label: 'Member Initiated Projects', to: '/projects/member-projects', desc: 'Community-proposed projects' },
   { label: 'Past Projects', to: '/projects/past-projects', desc: 'Completed project archive' },
+  { label: 'INF Initiatives', to: '/projects/inf-initiatives', desc: 'History, relief efforts and publications' },
+  { label: 'Culture', to: '/projects/culture', desc: 'Indian festivals and Hindu temples in the U.S.' },
+  { label: 'Indian Stamps', to: '/projects/indian-stamps', desc: 'Gallery of Indian postage stamps' },
+  { label: 'PIO Card', to: '/projects/pio-card', desc: 'Person of Indian Origin card archive' },
+  { label: 'Press Releases', to: '/projects/press-releases', desc: 'Official announcements' },
 ]
 
 const directorySubmenu = [

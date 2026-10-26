@@ -9,8 +9,8 @@ const project: PastProject = {
   overviewImage: 'https://images.unsplash.com/photo-1593113598332-cd288d649433?w=700&h=500&fit=crop&auto=format',
   facts: [
     { label: 'Date', value: 'June – August 1999' },
-    { label: 'Location', value: 'Karnataka, New Delhi, Srinagar & Udhampur' },
-    { label: 'Beneficiaries', value: 'Families of fallen soldiers & wounded jawans' },
+    { label: 'Location', value: 'Karnataka, New Delhi, Jammu & Kashmir, Rajasthan' },
+    { label: 'Beneficiaries', value: 'About 200 families of fallen soldiers, and wounded jawans' },
     { label: 'Led by', value: 'Dr. K.V. Rao, President, INF' },
     { label: 'Status', value: 'Completed' },
   ],
@@ -20,8 +20,8 @@ const project: PastProject = {
   ],
   response: [
     {
-      title: 'Direct Aid to Families — Karnataka',
-      desc: 'On July 17–18, 1999, INF distributed direct relief to all soldier families in Belgaum District, and provided financial support to families of soldiers from Karnataka, Kerala and Goa.',
+      title: 'Direct Aid to Families',
+      desc: 'On July 17–18, 1999, INF delivered relief to all soldier families in Belgaum District, Karnataka, and supported families from Kerala and Goa. From July 24–27, Dr. Rao visited bereaved families in Sikar District, Rajasthan, which lost 56 soldiers. Each family received Rs. 10,000.',
     },
     {
       title: 'Army Base Hospital, New Delhi',
@@ -39,8 +39,8 @@ const project: PastProject = {
   stats: [
     { value: '35', label: 'Critically Wounded Aided' },
     { value: '30', label: 'Fans Donated' },
-    { value: '50', label: 'Fruit Bags Delivered' },
-    { value: '4', label: 'States Visited' },
+    { value: '~200', label: 'Families Assisted' },
+    { value: 'Rs. 10,000', label: 'Per Bereaved Family' },
   ],
   gallery: [
     'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=400&h=300&fit=crop&auto=format',

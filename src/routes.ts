@@ -49,6 +49,15 @@ import GujaratCycloneReliefPage from './pages/projects/past/GujaratCycloneRelief
 import KargilOperationCarePage from './pages/projects/past/KargilOperationCare'
 import AndhraProjectsPage from './pages/projects/past/AndhraProjects'
 import MapsProjectPage from './pages/projects/past/MapsProject'
+import AndhraCycloneRelief1996Page from './pages/projects/past/AndhraCycloneRelief1996'
+import TsunamiRelief2004Page from './pages/projects/past/TsunamiRelief2004'
+
+// Archive pages (Projects submenu)
+import InfInitiativesPage from './pages/projects/InfInitiatives'
+import CulturePage from './pages/projects/Culture'
+import IndianStampsPage from './pages/projects/IndianStamps'
+import PioCardPage from './pages/projects/PioCard'
+import PressReleasesPage from './pages/projects/PressReleases'
 
 // Membership
 import MembersPage from './pages/Members'
@@ -84,6 +93,11 @@ export const router = createBrowserRouter([
       { path: 'projects/insurance/certificate', Component: CertificatePage },
       { path: 'projects/nyu-scholarship', Component: NyuScholarshipPage },
       { path: 'projects/academic-travel-grants', Component: AcademicTravelGrantsPage },
+      { path: 'projects/inf-initiatives', Component: InfInitiativesPage },
+      { path: 'projects/culture', Component: CulturePage },
+      { path: 'projects/indian-stamps', Component: IndianStampsPage },
+      { path: 'projects/pio-card', Component: PioCardPage },
+      { path: 'projects/press-releases', Component: PressReleasesPage },
 
       // Past project detail pages
       { path: 'projects/past/orissa-cyclone-relief', Component: OrissaCycloneReliefPage },
@@ -92,6 +106,8 @@ export const router = createBrowserRouter([
       { path: 'projects/past/kargil-operation-care', Component: KargilOperationCarePage },
       { path: 'projects/past/andhra-pradesh-projects', Component: AndhraProjectsPage },
       { path: 'projects/past/maps-project', Component: MapsProjectPage },
+      { path: 'projects/past/andhra-pradesh-cyclone-relief-1996', Component: AndhraCycloneRelief1996Page },
+      { path: 'projects/past/tsunami-relief-2004', Component: TsunamiRelief2004Page },
 
       // Directory pages
       { path: 'directory', Component: DirectoryIndexPage },
