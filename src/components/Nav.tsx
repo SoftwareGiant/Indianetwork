@@ -111,6 +111,8 @@ export default function Nav() {
     )
   }
 
+  const compact = scrolled
+
   return (
     <nav
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
@@ -120,15 +122,52 @@ export default function Nav() {
         boxShadow: solid ? '0 1px 0 rgba(255,255,255,0.06)' : 'none',
       }}
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between" style={{ height: 72 }}>
-        {/* Logo */}
-        <Link to="/" className="flex items-center gap-2">
-          <img src={logo} alt="India Network Foundation" className="h-10 w-auto" style={{ filter: 'drop-shadow(0 1px 2px rgba(0,0,0,0.3))' }} />
-          <div className="hidden sm:block xl:hidden 2xl:block text-white leading-tight" style={{ fontWeight: 800, fontSize: '0.95rem' }}>India Network Foundation</div>
+      {/* ── Mobile / tablet bar ─────────────────────────────────────────── */}
+      <div className="lg:hidden max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between gap-3" style={{ height: 72 }}>
+        <Link to="/" className="flex items-center gap-2.5 min-w-0">
+          <img src={logo} alt="India Network Foundation" className="h-11 w-auto shrink-0" style={{ filter: 'drop-shadow(0 1px 2px rgba(0,0,0,0.3))' }} />
+          <div className="text-white uppercase leading-tight" style={{ fontWeight: 800, fontSize: '0.95rem', letterSpacing: '0.04em' }}>
+            India Network<br className="sm:hidden" /> Foundation
+          </div>
         </Link>
+        <div className="flex items-center gap-3 shrink-0">
+          <Link to="/donate" className="hidden sm:inline-block px-5 py-2.5 rounded-full text-white text-sm transition-all duration-200 hover:scale-105 active:scale-95 whitespace-nowrap" style={{ background: '#F47C20', fontWeight: 600 }}>
+            Donate Now
+          </Link>
+          <button onClick={() => setMobileOpen(!mobileOpen)} className="text-white p-1" aria-label="Toggle menu">
+            {mobileOpen
+              ? <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M6 6l12 12M18 6L6 18" /></svg>
+              : <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 7h16M4 12h16M4 17h16" /></svg>
+            }
+          </button>
+        </div>
+      </div>
 
-        {/* Desktop links */}
-        <div className="hidden xl:flex items-center gap-4 2xl:gap-5">
+      {/* ── Desktop: brand bar (collapses on scroll) ─────────────────────── */}
+      <div
+        className="hidden lg:block overflow-hidden transition-all duration-500"
+        style={{ maxHeight: compact ? 0 : 72, opacity: compact ? 0 : 1, borderBottom: compact ? 'none' : '1px solid rgba(255,255,255,0.08)' }}
+      >
+        <div className="max-w-7xl mx-auto px-6 xl:px-12 flex items-center justify-between" style={{ height: 72 }}>
+          <Link to="/" className="flex items-center gap-3">
+            <img src={logo} alt="India Network Foundation" className="h-12 w-auto" style={{ filter: 'drop-shadow(0 1px 2px rgba(0,0,0,0.3))' }} />
+            <div>
+              <div className="text-white uppercase leading-none" style={{ fontWeight: 800, fontSize: '1.35rem', letterSpacing: '0.05em' }}>India Network Foundation</div>
+              <div className="text-white/60 text-xs mt-1.5" style={{ fontWeight: 500, letterSpacing: '0.02em' }}>Serving the Indian Community Since 1988</div>
+            </div>
+          </Link>
+          <Link to="/donate" className="px-6 py-2.5 rounded-full text-white text-sm transition-all duration-200 hover:scale-105 active:scale-95 whitespace-nowrap" style={{ background: '#F47C20', fontWeight: 600 }}>
+            Donate Now
+          </Link>
+        </div>
+      </div>
+
+      {/* ── Desktop: menu bar ────────────────────────────────────────────── */}
+      <div className="hidden lg:flex max-w-7xl mx-auto px-6 xl:px-12 items-center justify-between gap-4 xl:gap-6 transition-all duration-500" style={{ height: compact ? 64 : 48 }}>
+        <Link to="/" aria-label="India Network Foundation home" className="shrink-0 transition-all duration-500 overflow-hidden" style={{ width: compact ? 40 : 0, opacity: compact ? 1 : 0 }}>
+          <img src={logo} alt="" className="h-10 w-auto max-w-none" />
+        </Link>
+        <div className={`flex items-center gap-4 xl:gap-6 ${compact ? '' : 'flex-1'}`}>
           <NavLink to="/" end className={({ isActive }) => `text-sm transition-colors duration-200 whitespace-nowrap ${isActive ? 'text-white' : 'text-white/70 hover:text-white'}`} style={{ fontWeight: 500 }}>Home</NavLink>
           <NavLink to="/about" className={({ isActive }) => `text-sm transition-colors duration-200 whitespace-nowrap ${isActive ? 'text-white' : 'text-white/70 hover:text-white'}`} style={{ fontWeight: 500 }}>About</NavLink>
           <NavLink to="/programs" className={({ isActive }) => `text-sm transition-colors duration-200 whitespace-nowrap ${isActive ? 'text-white' : 'text-white/70 hover:text-white'}`} style={{ fontWeight: 500 }}>Programs</NavLink>
@@ -199,23 +238,14 @@ export default function Nav() {
           ))}
         </div>
 
-        {/* Donate CTA + mobile toggle */}
-        <div className="flex items-center gap-3">
-          <Link to="/donate" className="px-4 sm:px-5 py-2.5 rounded-full text-white text-sm transition-all duration-200 hover:scale-105 active:scale-95 whitespace-nowrap" style={{ background: '#F47C20', fontWeight: 600 }}>
-            Donate Now
-          </Link>
-          <button onClick={() => setMobileOpen(!mobileOpen)} className="xl:hidden text-white p-1" aria-label="Toggle menu">
-            {mobileOpen
-              ? <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2"><path d="M6 6l10 10M16 6L6 16" /></svg>
-              : <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 7h14M4 12h14M4 17h14" /></svg>
-            }
-          </button>
-        </div>
+        <Link to="/donate" className="shrink-0 px-5 py-2 rounded-full text-white text-sm transition-all duration-500 hover:scale-105 whitespace-nowrap" style={{ background: '#F47C20', fontWeight: 600, opacity: compact ? 1 : 0, pointerEvents: compact ? 'auto' : 'none' }} tabIndex={compact ? 0 : -1}>
+          Donate Now
+        </Link>
       </div>
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="xl:hidden px-6 pb-6 overflow-y-auto" style={{ backgroundColor: 'rgba(13,43,69,0.98)', maxHeight: 'calc(100vh - 72px)' }}>
+        <div className="lg:hidden px-6 pb-6 overflow-y-auto" style={{ backgroundColor: 'rgba(13,43,69,0.98)', maxHeight: 'calc(100vh - 72px)' }}>
           <NavLink to="/" end onClick={() => setMobileOpen(false)} className="block py-3 text-white/80 hover:text-white text-base border-b border-white/10 transition-colors">Home</NavLink>
           <NavLink to="/about" onClick={() => setMobileOpen(false)} className="block py-3 text-white/80 hover:text-white text-base border-b border-white/10 transition-colors">About</NavLink>
           <NavLink to="/programs" onClick={() => setMobileOpen(false)} className="block py-3 text-white/80 hover:text-white text-base border-b border-white/10 transition-colors">Programs</NavLink>

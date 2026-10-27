@@ -16,7 +16,7 @@ function PageHero() {
         className="absolute inset-0 w-full h-full object-cover"
       />
       <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(13,43,69,0.92) 0%, rgba(13,43,69,0.4) 60%, transparent 100%)' }} />
-      <div className="relative z-10 max-w-6xl mx-auto px-6 pt-28 pb-12 w-full">
+      <div className="relative z-10 max-w-6xl mx-auto px-6 pt-28 lg:pt-40 pb-12 w-full">
         <div className="flex flex-wrap items-center gap-2 text-white/50 text-sm mb-5">
           <Link to="/" className="hover:text-white">Home</Link>
           <span>/</span>

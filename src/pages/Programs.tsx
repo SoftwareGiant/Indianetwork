@@ -11,7 +11,7 @@ function PageHero() {
         <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(13,43,69,0.92) 0%, rgba(13,43,69,0.55) 100%)' }} />
         <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(13,43,69,0.85) 0%, transparent 55%)' }} />
       </div>
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 pb-16 pt-36 w-full">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 pb-16 pt-36 lg:pt-44 w-full">
         <div className="flex flex-wrap items-center gap-2 text-white/50 text-sm mb-5">
           <Link to="/" className="hover:text-white transition-colors">Home</Link>
           <span>/</span>
@@ -37,7 +37,7 @@ const programs = [
   },
   {
     icon: <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" /></svg>,
-    title: 'Healthcare', tag: 'Core Program', color: '#F47C20', slug: 'healthcare',
+    title: 'Health Care', tag: 'Core Program', color: '#F47C20', slug: 'healthcare',
     image: 'https://images.unsplash.com/photo-1596450514537-fae68a81346b?w=600&h=400&fit=crop&auto=format',
     description: 'Visitor health insurance with pre-existing coverage, plus member support for transplants and medical care in India.',
   },

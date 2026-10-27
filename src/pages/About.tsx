@@ -15,7 +15,7 @@ function PageHero() {
         <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(13,43,69,0.9) 0%, rgba(13,43,69,0.6) 60%, rgba(13,43,69,0.3) 100%)' }} />
         <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(13,43,69,0.8) 0%, transparent 60%)' }} />
       </div>
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 pb-16 pt-36 w-full">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 pb-16 pt-36 lg:pt-44 w-full">
         {/* Breadcrumb */}
         <div className="flex flex-wrap items-center gap-2 text-white/50 text-sm mb-5">
           <Link to="/" className="hover:text-white transition-colors">Home</Link>
@@ -235,7 +235,7 @@ function AboutTimeline() {
 function Leadership() {
   const { ref, inView } = useInView(0.1)
   return (
-    <section ref={ref} className="py-24 lg:py-32" style={{ backgroundColor: 'white' }}>
+    <section id="founder" ref={ref} className="py-24 lg:py-32" style={{ backgroundColor: 'white', scrollMarginTop: 72 }}>
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="text-center mb-14">
           <span className="inline-block px-4 py-1.5 rounded-full text-xs font-700 uppercase tracking-widest mb-5" style={{ background: 'rgba(46,139,87,0.1)', color: '#2E8B57', fontWeight: 700 }}>Our Founder</span>

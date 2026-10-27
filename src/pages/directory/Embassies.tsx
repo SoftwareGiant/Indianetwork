@@ -75,7 +75,7 @@ export default function EmbassiesPage() {
   return (
     <div className="min-h-screen" style={{ backgroundColor: "#FFF9F3" }}>
       {/* Header */}
-      <div style={{ backgroundColor: "#0D2B45" }} className="pt-32 pb-16 px-6">
+      <div style={{ backgroundColor: "#0D2B45" }} className="pt-32 lg:pt-44 pb-16 px-6">
         <div className="max-w-6xl mx-auto">
           <nav className="flex flex-wrap items-center gap-2 text-sm text-blue-200 mb-6">
             <Link to="/" className="hover:text-white transition-colors">

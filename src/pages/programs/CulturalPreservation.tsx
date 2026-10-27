@@ -5,7 +5,7 @@ function PageHero() {
   const { ref, inView } = useInView();
   return (
     <section
-      className="relative min-h-[480px] flex items-end pb-16"
+      className="relative min-h-[480px] flex items-end pt-28 lg:pt-40 pb-16"
       style={{
         backgroundImage: "url('https://images.unsplash.com/photo-1532375810709-75b1da00537c?w=1800&h=800&fit=crop&auto=format')",
         backgroundSize: 'cover',

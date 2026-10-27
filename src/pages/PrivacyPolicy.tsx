@@ -46,7 +46,7 @@ export default function PrivacyPolicyPage() {
 
   return (
     <div className="bg-white min-h-screen">
-      <div className="max-w-4xl mx-auto px-6 py-24">
+      <div className="max-w-4xl mx-auto px-6 py-24 lg:pt-40">
         {/* Breadcrumb */}
         <nav className="flex items-center gap-2 text-sm text-gray-500 mb-8">
           <Link to="/" className="hover:text-orange-500 transition-colors">

@@ -5,14 +5,14 @@ import logo from '../imports/logo_of_india_network-removebg-preview.png'
 const footerLinks = {
   Programs: [
     { label: 'Education', to: '/programs/education' },
-    { label: 'Healthcare', to: '/programs/healthcare' },
+    { label: 'Health Care', to: '/programs/healthcare' },
     { label: 'Community Development', to: '/programs/community' },
     { label: 'Travel Grants', to: '/programs/travel-grants' },
     { label: 'Cultural Preservation', to: '/programs/cultural-preservation' },
   ],
   Organization: [
     { label: 'About INF', to: '/about' },
-    { label: 'Our Founder', to: '/about' },
+    { label: 'Our Founder', to: '/about#founder' },
     { label: 'Our Impact', to: '/impact' },
     { label: 'Past Projects', to: '/projects/past-projects' },
     { label: 'News & Events', to: '/news' },

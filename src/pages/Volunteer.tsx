@@ -10,7 +10,7 @@ function PageHero() {
         <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(13,43,69,0.9) 0%, rgba(13,43,69,0.5) 60%, rgba(13,43,69,0.2) 100%)' }} />
         <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(13,43,69,0.85) 0%, transparent 55%)' }} />
       </div>
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 pb-16 pt-36 w-full">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 pb-16 pt-36 lg:pt-44 w-full">
         <div className="flex flex-wrap items-center gap-2 text-white/50 text-sm mb-5">
           <Link to="/" className="hover:text-white transition-colors">Home</Link>
           <span>/</span>

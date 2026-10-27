@@ -28,7 +28,7 @@ function Hero() {
         <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(13,43,69,0.9) 0%, transparent 50%)' }} />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 pt-28 pb-20 w-full">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 pt-28 lg:pt-40 pb-20 w-full">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
             <div
@@ -140,7 +140,7 @@ const featuredPrograms = [
   },
   {
     icon: <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" /></svg>,
-    title: 'Healthcare',
+    title: 'Health Care',
     description: 'Visitor health insurance with pre-existing coverage for families travelling to the United States and Canada.',
     image: 'https://images.unsplash.com/photo-1596450514537-fae68a81346b?w=600&h=400&fit=crop&auto=format',
     tag: 'Core Program',

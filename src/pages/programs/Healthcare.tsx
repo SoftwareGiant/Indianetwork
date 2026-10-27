@@ -5,7 +5,7 @@ function PageHero() {
   const { ref, inView } = useInView();
   return (
     <section
-      className="relative min-h-[480px] flex items-end pb-16"
+      className="relative min-h-[480px] flex items-end pt-28 lg:pt-40 pb-16"
       style={{
         backgroundImage: "url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1800&h=800&fit=crop&auto=format')",
         backgroundSize: 'cover',
@@ -23,9 +23,9 @@ function PageHero() {
           <span>/</span>
           <Link to="/programs" className="hover:text-white transition-colors">Programs</Link>
           <span>/</span>
-          <span className="text-white">Healthcare</span>
+          <span className="text-white">Health Care</span>
         </div>
-        <span className="inline-block px-4 py-1.5 rounded-full text-sm font-semibold mb-4" style={{ background: '#F47C20', color: 'white' }}>Healthcare</span>
+        <span className="inline-block px-4 py-1.5 rounded-full text-sm font-semibold mb-4" style={{ background: '#F47C20', color: 'white' }}>Health Care</span>
         <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4">Health Care</h1>
         <p className="text-white/80 text-lg max-w-2xl">Visitor health insurance for families travelling to North America, and support for life-saving medical care in India.</p>
       </div>
