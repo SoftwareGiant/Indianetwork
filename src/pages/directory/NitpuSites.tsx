@@ -58,7 +58,14 @@ export default function NitpuSitesPage() {
 
       {/* Centres */}
       <div className="max-w-5xl mx-auto px-6 py-12">
-        <p className="text-sm text-gray-500 mb-8">{centres.length} NITPU web servers across India</p>
+        <div className="rounded-2xl p-5 mb-8 flex gap-3 items-start" style={{ background: "rgba(244,124,32,0.08)", border: "1px solid rgba(244,124,32,0.25)" }}>
+          <span className="text-xl">ℹ️</span>
+          <p className="text-sm text-gray-700 leading-relaxed">
+            <strong>Historical list.</strong> These NITPU web servers hosted the 1999 Union Budget and are no longer online. The Union Budget is now published on the official website of the Ministry of Finance:{" "}
+            <a href="https://www.indiabudget.gov.in/" target="_blank" rel="noopener noreferrer" className="underline font-semibold" style={{ color: "#F47C20" }}>indiabudget.gov.in</a>
+          </p>
+        </div>
+        <p className="text-sm text-gray-500 mb-8">{centres.length} NITPU web servers across India (1999)</p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {centres.map((centre, index) => (
@@ -82,38 +89,21 @@ export default function NitpuSitesPage() {
                 {centre.city}
               </h3>
 
-              {/* Links */}
+              {/* Archived addresses (no longer online) */}
               <div className="flex flex-col gap-1">
                 {centre.urls.map((url) => (
-                  <a
-                    key={url}
-                    href={url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm break-all hover:underline"
-                    style={{ color: "#2E8B57" }}
-                  >
+                  <span key={url} className="text-sm break-all text-gray-500">
                     {url.replace('http://', '')}
-                  </a>
+                  </span>
                 ))}
               </div>
-
-              <a
-                href={centre.urls[0]}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-auto rounded-full text-xs font-semibold px-4 py-2 self-start transition-opacity hover:opacity-80"
-                style={{ backgroundColor: "#2E8B57", color: "#fff" }}
-              >
-                Visit Site
-              </a>
             </div>
           ))}
         </div>
 
         <p className="text-xs text-gray-400 mt-10">
-          Prepared and maintained by the National Informatics Centre for the Ministry of Finance,
-          Government of India. Queries may be sent to finmin@finance.delhi.nic.in.
+          Originally prepared and maintained by the National Informatics Centre for the Ministry of
+          Finance, Government of India.
         </p>
       </div>
     </div>

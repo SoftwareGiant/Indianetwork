@@ -8,104 +8,105 @@ interface Institution {
   name: string;
   type: InstitutionType;
   website: string;
+  note: string;
 }
 
 const institutions: Institution[] = [
-  { name: "Reserve Bank of India (RBI)", type: "Financial Institution", website: "http://www.rbi.org.in/" },
-  { name: "State Bank of Bikaner and Jaipur (SBBJ)", type: "State Bank Group", website: "http://www.sbbjbank.com/" },
-  { name: "State Bank of Hyderabad (SBH)", type: "State Bank Group", website: "http://www.sbhyd.com/" },
-  { name: "State Bank of India (SBI)", type: "State Bank Group", website: "http://www.sbi.co.in/" },
-  { name: "State Bank of Indore (SBIR)", type: "State Bank Group", website: "http://www.indorebank.org/" },
-  { name: "State Bank of Mysore (SBM)", type: "State Bank Group", website: "http://www.mysorebank.com/" },
-  { name: "State Bank of Patiala (SBP)", type: "State Bank Group", website: "http://www.sbp.co.in/" },
-  { name: "State Bank of Saurashtra (SBS)", type: "State Bank Group", website: "http://www.sbsbank.com/" },
-  { name: "State Bank of Travancore (SBT)", type: "State Bank Group", website: "http://www.statebankoftravancore.com/" },
-  { name: "Allahabad Bank", type: "Nationalised Bank", website: "http://www.allahabadbank.com/" },
-  { name: "Andhra Bank", type: "Nationalised Bank", website: "http://www.andhrabank-india.com/" },
-  { name: "Bank of Baroda", type: "Nationalised Bank", website: "http://www.bankofbaroda.com/" },
-  { name: "Bank of India", type: "Nationalised Bank", website: "http://www.bankofindia.com/" },
-  { name: "Bank of Maharashtra", type: "Nationalised Bank", website: "http://www.maharashtrabank.com/" },
-  { name: "Canara Bank", type: "Nationalised Bank", website: "http://www.canbankindia.com/" },
-  { name: "Central Bank of India", type: "Nationalised Bank", website: "http://www.centralbankofindia.co.in/" },
-  { name: "Corporation Bank", type: "Nationalised Bank", website: "http://www.corpbank.com/" },
-  { name: "Dena Bank", type: "Nationalised Bank", website: "http://www.denabank.com/" },
-  { name: "Indian Bank", type: "Nationalised Bank", website: "http://www.indian-bank.com/" },
-  { name: "Indian Overseas Bank", type: "Nationalised Bank", website: "http://www.iob.com/" },
-  { name: "Oriental Bank of Commerce (OBC)", type: "Nationalised Bank", website: "http://www.obcindia.com/" },
-  { name: "Punjab and Sind Bank", type: "Nationalised Bank", website: "http://www.psbindia.com/" },
-  { name: "Punjab National Bank (PNB)", type: "Nationalised Bank", website: "http://www.pnbindia.com/" },
-  { name: "Syndicate Bank", type: "Nationalised Bank", website: "http://www.syndicatebank.com/" },
-  { name: "UCO Bank", type: "Nationalised Bank", website: "http://www.ucobank.com/" },
-  { name: "Union Bank of India", type: "Nationalised Bank", website: "http://www.unionbankofindia.com/" },
-  { name: "United Bank of India (UBI)", type: "Nationalised Bank", website: "http://www.unitedbankofindia.com/" },
-  { name: "Vijaya Bank", type: "Nationalised Bank", website: "http://www.vijayabank.com/" },
-  { name: "Bihar State Co-operative Bank Limited (BSCB)", type: "Co-operative & Rural", website: "http://biharbank.bih.nic.in/" },
-  { name: "District Co-operative Central Bank Limited, Bidar, Karnataka", type: "Co-operative & Rural", website: "http://dccbank.com/" },
-  { name: "Haryana State Co-operative Apex Bank Limited (HARCOBANK)", type: "Co-operative & Rural", website: "http://harcobank.nic.in/" },
-  { name: "National Federation of State Co-operative Banks Limited (NAFSCOB)", type: "Co-operative & Rural", website: "http://www.nafscob.org/" },
-  { name: "Orissa State Co-operative Bank Limited (OSCB)", type: "Co-operative & Rural", website: "http://www.oscb.coop/" },
-  { name: "Repatriates Co-operative Finance and Development Bank Limited", type: "Co-operative & Rural", website: "http://mha.nic.in/REPCO%20BANK.htm" },
-  { name: "Agriculture Planning and Information Bank (APIB)", type: "Co-operative & Rural", website: "http://megapib.nic.in/" },
-  { name: "National Bank for Agriculture and Rural Development (NABARD)", type: "Co-operative & Rural", website: "http://www.nabard.org/" },
-  { name: "Andhra Pradesh State Financial Corporation (APSFC)", type: "Financial Institution", website: "http://www.apsfc.com/" },
-  { name: "Andhra Pradesh State Minorities Finance Corporation Limited (APMFC)", type: "Financial Institution", website: "http://www.apsmfc.com/" },
-  { name: "Credit Guarantee Fund Trust for Small Industries (CGTSI)", type: "Financial Institution", website: "http://www.cgtsi.org.in/" },
-  { name: "Delhi SC/ST/OBC, Minorities and Handicapped Finance and Development Corporation Limited (DSFDC)", type: "Financial Institution", website: "http://dsfdc.delhigovt.nic.in/" },
-  { name: "Economic Development Corporation Limited, Goa", type: "Financial Institution", website: "http://www.edc-goa.com/" },
-  { name: "Export-Import Bank of India", type: "Financial Institution", website: "http://www.eximbankindia.com/" },
-  { name: "Himachal Pradesh Financial Corporation (HPFC)", type: "Financial Institution", website: "http://hpfc.nic.in/" },
-  { name: "Indian Railway Finance Corporation Limited (IRFC)", type: "Financial Institution", website: "http://irfc.nic.in/" },
-  { name: "Indian Renewable Energy Development Agency Limited (IREDA)", type: "Financial Institution", website: "http://ireda.nic.in/" },
-  { name: "Industrial Development Bank of India (IDBI)", type: "Financial Institution", website: "http://www.idbi.com/" },
-  { name: "Industrial Investment Bank of India Limited (IIBI)", type: "Financial Institution", website: "http://www.iibiltd.com/" },
-  { name: "Madhya Pradesh Financial Corporation (MPFC)", type: "Financial Institution", website: "http://www.mpfc.org/" },
-  { name: "National Minorities Development and Finance Corporation (NMDFC)", type: "Financial Institution", website: "http://www.nmdfc.org/" },
-  { name: "National Safai Karamcharis Finance and Development Corporation (NSKFDC)", type: "Financial Institution", website: "http://nskfdc.nic.in/" },
-  { name: "National Scheduled Castes Finance and Development Corporatioin (NSFDC)", type: "Financial Institution", website: "http://nsfdc.nic.in/" },
-  { name: "North Eastern Development Finance Corporation (NEDFI)", type: "Financial Institution", website: "http://www.nedfi.com/" },
-  { name: "Power Finance Corporation Limited", type: "Financial Institution", website: "http://pfc.gov.in/" },
-  { name: "Rajasthan Finance Corporation (RFC)", type: "Financial Institution", website: "http://www.rfconline.org/" },
-  { name: "Rural Electrification Corporation Limited", type: "Financial Institution", website: "http://recindia.nic.in/" },
-  { name: "Scheduled Caste/Scheduled Tribes, Other Backward Classes, Minorities and Handicapped Financial and Development Corporation Limited, Dadra and Nagar Haveli, Daman and Diu", type: "Financial Institution", website: "http://www.scstcorpndddnh.com/" },
-  { name: "Small Industries Development Bank of India (SIDBI)", type: "Financial Institution", website: "http://www.sidbi.com/" },
-  { name: "Tamil Nadu Industrial Investment Corporation Limited", type: "Financial Institution", website: "http://www.tiic.org/" },
-  { name: "Unit Trust of India (UTI)", type: "Financial Institution", website: "http://www.unittrustofindia.com/" },
-  { name: "Uttar Pradesh Financial Corporation (UPFC)", type: "Financial Institution", website: "http://www.upfcindia.com/" },
-  { name: "Agriculture Insurance Company of India Limited", type: "Insurance", website: "http://aicofindia.nic.in/" },
-  { name: "Employees’ State Insurance Corporation (ESIC)", type: "Insurance", website: "http://esic.nic.in/" },
-  { name: "Export Credit Guarantee Corporation of India Limited (ECGC)", type: "Insurance", website: "http://www.ecgcindia.com/" },
-  { name: "General Insurance Corporation of India (GIC)", type: "Insurance", website: "http://www.gicofindia.com/" },
-  { name: "Insurance Regulatory and Development Authority", type: "Insurance", website: "http://www.irdaindia.org/" },
-  { name: "Life Insurance Corporation of India (LIC)", type: "Insurance", website: "http://www.licindia.com/" },
-  { name: "National Insurance Company Limited (NICL)", type: "Insurance", website: "http://www.nationalinsuranceindia.com/" },
-  { name: "New India Assurance Company Limited (NIACL)", type: "Insurance", website: "http://www.niacl.com/" },
-  { name: "Oriental Insurance Company Limited (OICL)", type: "Insurance", website: "http://orientalinsurance.nic.in/" },
-  { name: "SBI Life Insurance Company Limited (SBI LIFE)", type: "Insurance", website: "http://www.sbilife.co.in/" },
-  { name: "United India Insurance Company Limited", type: "Insurance", website: "http://www.uiic.co.in/" },
-  { name: "Central Depository Services (India) Limited (CDSL)", type: "Securities & Exchanges", website: "http://www.cdslindia.com/" },
-  { name: "Inter-connected Stock Exchange of India Limited (ISE)", type: "Securities & Exchanges", website: "http://www.iseindia.com/" },
-  { name: "National Securities Depository Limited (NSDL)", type: "Securities & Exchanges", website: "http://www.nsdl.co.in/" },
-  { name: "National Stock Exchange (NSE), India", type: "Securities & Exchanges", website: "http://www.nse-india.com/" },
-  { name: "Securities and Exchange Board of India (SEBI)", type: "Securities & Exchanges", website: "http://www.sebi.gov.in/" },
-  { name: "Stock Exchange, Kolkata", type: "Securities & Exchanges", website: "http://www.cse-india.com/" },
-  { name: "Stock Exchange, Mumbai (BSE)", type: "Securities & Exchanges", website: "http://www.bseindia.com/" },
-  { name: "Stock Exchange, Pune", type: "Securities & Exchanges", website: "http://www.punestockexchange.com/" },
-  { name: "Stock Holding Corporation of India Limited (SHCIL)", type: "Securities & Exchanges", website: "http://www.shcil.com/" },
-  { name: "Asian Development Bank (ADB)", type: "Other", website: "http://www.adb.org/India" },
-  { name: "Chit Fund Department, Delhi", type: "Other", website: "http://chitfund.delhigovt.nic.in/" },
-  { name: "Directorate of Institutional Finance (DIF), Chhattisgarh", type: "Other", website: "http://cgdif.nic.in/" },
-  { name: "Financial Intelligence Unit – India (FIU-IND)", type: "Other", website: "http://fiuindia.gov.in/" },
-  { name: "INMB Bank Limited, Lagos, Nigeria", type: "Other", website: "http://www.inmb.net/" },
-  { name: "Institute for Development and Research in Banking Technology (IDRBT)", type: "Other", website: "http://www.idrbt.ac.in/" },
-  { name: "National Housing Bank (NHB)", type: "Other", website: "http://nhb.org.in/" },
-  { name: "SBI Commercial and International Bank Limited (SBICI)", type: "Other", website: "http://www.sbici.com/" },
-  { name: "SBI Discount and Finance House of India Limited (SBI DFHI)", type: "Other", website: "http://www.sbidfhi.com/" },
-  { name: "SBI Factors and Commercial Services Private Limited (SBI FACTORS)", type: "Other", website: "http://www.sbifactors.com/" },
-  { name: "SBI Funds Management Private Limited (SBI FUNDS)", type: "Other", website: "http://www.sbimf.com/" },
-  { name: "SME Rating Agency of India Limited (SMERA)", type: "Other", website: "http://www.smera.in/" },
-  { name: "State Bank of India (California)", type: "Other", website: "http://www.sbical.com/" },
-  { name: "State Bank of India (Canada)", type: "Other", website: "http://www.sbicanada.com/" },
-  { name: "World Bank", type: "Other", website: "http://www.worldbank.org.in/" },
+  { name: "Reserve Bank of India (RBI)", type: "Financial Institution", website: "https://www.rbi.org.in/", note: "" },
+  { name: "State Bank of Bikaner and Jaipur (SBBJ)", type: "State Bank Group", website: "https://sbi.bank.in/", note: "Merged into State Bank of India (2017)" },
+  { name: "State Bank of Hyderabad (SBH)", type: "State Bank Group", website: "https://sbi.bank.in/", note: "Merged into State Bank of India (2017)" },
+  { name: "State Bank of India (SBI)", type: "State Bank Group", website: "https://sbi.bank.in/", note: "" },
+  { name: "State Bank of Indore (SBIR)", type: "State Bank Group", website: "https://sbi.bank.in/", note: "Merged into State Bank of India (2010)" },
+  { name: "State Bank of Mysore (SBM)", type: "State Bank Group", website: "https://sbi.bank.in/", note: "Merged into State Bank of India (2017)" },
+  { name: "State Bank of Patiala (SBP)", type: "State Bank Group", website: "https://sbi.bank.in/", note: "Merged into State Bank of India (2017)" },
+  { name: "State Bank of Saurashtra (SBS)", type: "State Bank Group", website: "https://sbi.bank.in/", note: "Merged into State Bank of India (2008)" },
+  { name: "State Bank of Travancore (SBT)", type: "State Bank Group", website: "https://sbi.bank.in/", note: "Merged into State Bank of India (2017)" },
+  { name: "Allahabad Bank", type: "Nationalised Bank", website: "https://indianbank.in/", note: "Merged into Indian Bank (2020)" },
+  { name: "Andhra Bank", type: "Nationalised Bank", website: "https://www.unionbankofindia.bank.in/", note: "Merged into Union Bank of India (2020)" },
+  { name: "Bank of Baroda", type: "Nationalised Bank", website: "https://bankofbaroda.bank.in/", note: "" },
+  { name: "Bank of India", type: "Nationalised Bank", website: "https://bankofindia.co.in/", note: "" },
+  { name: "Bank of Maharashtra", type: "Nationalised Bank", website: "https://bankofmaharashtra.bank.in/", note: "" },
+  { name: "Canara Bank", type: "Nationalised Bank", website: "https://canarabank.bank.in/", note: "" },
+  { name: "Central Bank of India", type: "Nationalised Bank", website: "https://centralbank.bank.in/", note: "" },
+  { name: "Corporation Bank", type: "Nationalised Bank", website: "https://www.unionbankofindia.bank.in/", note: "Merged into Union Bank of India (2020)" },
+  { name: "Dena Bank", type: "Nationalised Bank", website: "https://bankofbaroda.bank.in/", note: "Merged into Bank of Baroda (2019)" },
+  { name: "Indian Bank", type: "Nationalised Bank", website: "https://indianbank.in/", note: "" },
+  { name: "Indian Overseas Bank", type: "Nationalised Bank", website: "https://www.iob.bank.in/", note: "" },
+  { name: "Oriental Bank of Commerce (OBC)", type: "Nationalised Bank", website: "https://pnb.bank.in/", note: "Merged into Punjab National Bank (2020)" },
+  { name: "Punjab and Sind Bank", type: "Nationalised Bank", website: "https://punjabandsindbank.co.in/", note: "" },
+  { name: "Punjab National Bank (PNB)", type: "Nationalised Bank", website: "https://pnb.bank.in/", note: "" },
+  { name: "Syndicate Bank", type: "Nationalised Bank", website: "https://canarabank.bank.in/", note: "Merged into Canara Bank (2020)" },
+  { name: "UCO Bank", type: "Nationalised Bank", website: "https://uco.bank.in/", note: "" },
+  { name: "Union Bank of India", type: "Nationalised Bank", website: "https://www.unionbankofindia.bank.in/", note: "" },
+  { name: "United Bank of India (UBI)", type: "Nationalised Bank", website: "https://pnb.bank.in/", note: "Merged into Punjab National Bank (2020)" },
+  { name: "Vijaya Bank", type: "Nationalised Bank", website: "https://bankofbaroda.bank.in/", note: "Merged into Bank of Baroda (2019)" },
+  { name: "Bihar State Co-operative Bank Limited (BSCB)", type: "Co-operative & Rural", website: "https://biharscb.bank.in/", note: "" },
+  { name: "District Co-operative Central Bank Limited, Bidar, Karnataka", type: "Co-operative & Rural", website: "", note: "Website not available" },
+  { name: "Haryana State Co-operative Apex Bank Limited (HARCOBANK)", type: "Co-operative & Rural", website: "https://harcobank.org.in/", note: "" },
+  { name: "National Federation of State Co-operative Banks Limited (NAFSCOB)", type: "Co-operative & Rural", website: "https://nafscob.org/", note: "" },
+  { name: "Orissa State Co-operative Bank Limited (OSCB)", type: "Co-operative & Rural", website: "https://odishascb.com/", note: "Now the Odisha State Co-operative Bank" },
+  { name: "Repatriates Co-operative Finance and Development Bank Limited", type: "Co-operative & Rural", website: "https://repcobank.com/", note: "Repco Bank" },
+  { name: "Agriculture Planning and Information Bank (APIB)", type: "Co-operative & Rural", website: "", note: "Website not available" },
+  { name: "National Bank for Agriculture and Rural Development (NABARD)", type: "Co-operative & Rural", website: "https://www.nabard.org/", note: "" },
+  { name: "Andhra Pradesh State Financial Corporation (APSFC)", type: "Financial Institution", website: "https://www.apsfc.com/", note: "" },
+  { name: "Andhra Pradesh State Minorities Finance Corporation Limited (APMFC)", type: "Financial Institution", website: "https://apsmfc.ap.gov.in/", note: "" },
+  { name: "Credit Guarantee Fund Trust for Small Industries (CGTSI)", type: "Financial Institution", website: "https://www.cgtmse.in/", note: "Now CGTMSE (Credit Guarantee Fund Trust for Micro and Small Enterprises)" },
+  { name: "Delhi SC/ST/OBC, Minorities and Handicapped Finance and Development Corporation Limited (DSFDC)", type: "Financial Institution", website: "https://dsfdc.delhi.gov.in/", note: "" },
+  { name: "Economic Development Corporation Limited, Goa", type: "Financial Institution", website: "https://edc-goa.com/", note: "" },
+  { name: "Export-Import Bank of India", type: "Financial Institution", website: "https://www.eximbankindia.in/", note: "" },
+  { name: "Himachal Pradesh Financial Corporation (HPFC)", type: "Financial Institution", website: "", note: "Website not available" },
+  { name: "Indian Railway Finance Corporation Limited (IRFC)", type: "Financial Institution", website: "https://irfc.co.in/", note: "" },
+  { name: "Indian Renewable Energy Development Agency Limited (IREDA)", type: "Financial Institution", website: "https://www.ireda.in/", note: "" },
+  { name: "Industrial Development Bank of India (IDBI)", type: "Financial Institution", website: "https://www.idbi.bank.in/", note: "Now IDBI Bank" },
+  { name: "Industrial Investment Bank of India Limited (IIBI)", type: "Financial Institution", website: "", note: "No longer operating" },
+  { name: "Madhya Pradesh Financial Corporation (MPFC)", type: "Financial Institution", website: "https://www.mpfc.org/", note: "" },
+  { name: "National Minorities Development and Finance Corporation (NMDFC)", type: "Financial Institution", website: "https://www.nmdfc.org/", note: "" },
+  { name: "National Safai Karamcharis Finance and Development Corporation (NSKFDC)", type: "Financial Institution", website: "https://nskfdc.nic.in/", note: "" },
+  { name: "National Scheduled Castes Finance and Development Corporation (NSFDC)", type: "Financial Institution", website: "https://nsfdc.nic.in/", note: "" },
+  { name: "North Eastern Development Finance Corporation (NEDFI)", type: "Financial Institution", website: "https://www.nedfi.com/", note: "" },
+  { name: "Power Finance Corporation Limited", type: "Financial Institution", website: "https://www.pfcindia.com/", note: "" },
+  { name: "Rajasthan Finance Corporation (RFC)", type: "Financial Institution", website: "https://rfc.rajasthan.gov.in/", note: "" },
+  { name: "Rural Electrification Corporation Limited", type: "Financial Institution", website: "https://recindia.nic.in/", note: "Now REC Limited" },
+  { name: "Scheduled Caste/Scheduled Tribes, Other Backward Classes, Minorities and Handicapped Financial and Development Corporation Limited, Dadra and Nagar Haveli, Daman and Diu", type: "Financial Institution", website: "", note: "Website not available" },
+  { name: "Small Industries Development Bank of India (SIDBI)", type: "Financial Institution", website: "https://www.sidbi.in/", note: "" },
+  { name: "Tamil Nadu Industrial Investment Corporation Limited", type: "Financial Institution", website: "https://www.tiic.org/", note: "" },
+  { name: "Unit Trust of India (UTI)", type: "Financial Institution", website: "https://www.utimf.com/", note: "Now UTI Mutual Fund" },
+  { name: "Uttar Pradesh Financial Corporation (UPFC)", type: "Financial Institution", website: "https://www.upfcindia.com/", note: "" },
+  { name: "Agriculture Insurance Company of India Limited", type: "Insurance", website: "https://www.aicofindia.com/", note: "" },
+  { name: "Employees’ State Insurance Corporation (ESIC)", type: "Insurance", website: "https://www.esic.gov.in/", note: "" },
+  { name: "Export Credit Guarantee Corporation of India Limited (ECGC)", type: "Insurance", website: "https://www.ecgc.in/", note: "" },
+  { name: "General Insurance Corporation of India (GIC)", type: "Insurance", website: "https://www.gicre.in/", note: "Now GIC Re" },
+  { name: "Insurance Regulatory and Development Authority", type: "Insurance", website: "https://irdai.gov.in/", note: "Now IRDAI" },
+  { name: "Life Insurance Corporation of India (LIC)", type: "Insurance", website: "https://licindia.in/", note: "" },
+  { name: "National Insurance Company Limited (NICL)", type: "Insurance", website: "https://nationalinsurance.nic.co.in/", note: "" },
+  { name: "New India Assurance Company Limited (NIACL)", type: "Insurance", website: "https://www.newindia.co.in/", note: "" },
+  { name: "Oriental Insurance Company Limited (OICL)", type: "Insurance", website: "https://orientalinsurance.org.in/", note: "" },
+  { name: "SBI Life Insurance Company Limited (SBI LIFE)", type: "Insurance", website: "https://www.sbilife.co.in/", note: "" },
+  { name: "United India Insurance Company Limited", type: "Insurance", website: "https://uiic.co.in/", note: "" },
+  { name: "Central Depository Services (India) Limited (CDSL)", type: "Securities & Exchanges", website: "https://www.cdslindia.com/", note: "" },
+  { name: "Inter-connected Stock Exchange of India Limited (ISE)", type: "Securities & Exchanges", website: "", note: "No longer operating as a stock exchange" },
+  { name: "National Securities Depository Limited (NSDL)", type: "Securities & Exchanges", website: "https://nsdl.co.in/", note: "" },
+  { name: "National Stock Exchange (NSE), India", type: "Securities & Exchanges", website: "https://www.nseindia.com/", note: "" },
+  { name: "Securities and Exchange Board of India (SEBI)", type: "Securities & Exchanges", website: "https://www.sebi.gov.in/", note: "" },
+  { name: "Stock Exchange, Kolkata", type: "Securities & Exchanges", website: "https://www.cse-india.com/", note: "" },
+  { name: "Stock Exchange, Mumbai (BSE)", type: "Securities & Exchanges", website: "https://www.bseindia.com/", note: "" },
+  { name: "Stock Exchange, Pune", type: "Securities & Exchanges", website: "", note: "No longer operating" },
+  { name: "Stock Holding Corporation of India Limited (SHCIL)", type: "Securities & Exchanges", website: "https://www.stockholding.com/", note: "" },
+  { name: "Asian Development Bank (ADB)", type: "Other", website: "https://www.adb.org/where-we-work/india", note: "" },
+  { name: "Chit Fund Department, Delhi", type: "Other", website: "", note: "Website not available" },
+  { name: "Directorate of Institutional Finance (DIF), Chhattisgarh", type: "Other", website: "https://cgdif.nic.in/", note: "" },
+  { name: "Financial Intelligence Unit – India (FIU-IND)", type: "Other", website: "https://fiuindia.gov.in/", note: "" },
+  { name: "INMB Bank Limited, Lagos, Nigeria", type: "Other", website: "", note: "Website not available" },
+  { name: "Institute for Development and Research in Banking Technology (IDRBT)", type: "Other", website: "https://www.idrbt.ac.in/", note: "" },
+  { name: "National Housing Bank (NHB)", type: "Other", website: "https://nhb.org.in/", note: "" },
+  { name: "SBI Commercial and International Bank Limited (SBICI)", type: "Other", website: "https://sbi.bank.in/", note: "Merged into State Bank of India" },
+  { name: "SBI Discount and Finance House of India Limited (SBI DFHI)", type: "Other", website: "https://www.sbidfhi.co.in/", note: "" },
+  { name: "SBI Factors and Commercial Services Private Limited (SBI FACTORS)", type: "Other", website: "https://www.sbiglobal.in/", note: "Now SBI Global Factors" },
+  { name: "SBI Funds Management Private Limited (SBI FUNDS)", type: "Other", website: "https://www.sbimf.com/", note: "SBI Mutual Fund" },
+  { name: "SME Rating Agency of India Limited (SMERA)", type: "Other", website: "https://www.acuite.in/", note: "Now Acuité Ratings & Research" },
+  { name: "State Bank of India (California)", type: "Other", website: "https://sbic.bank/", note: "" },
+  { name: "State Bank of India (Canada)", type: "Other", website: "https://ca.statebank/", note: "" },
+  { name: "World Bank", type: "Other", website: "https://www.worldbank.org/en/country/india", note: "" },
 ];
 
 const typeBadgeColors: Record<string, string> = {
@@ -209,21 +210,26 @@ export default function FinancialInstitutionsPage() {
                     {inst.type}
                   </span>
                 </div>
-                <a
-                  href={inst.website}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-auto rounded-full text-sm font-semibold px-4 py-2 transition-colors self-start"
-                  style={{ backgroundColor: "#0D2B45", color: "#fff" }}
-                >
-                  Visit Website
-                </a>
+                {inst.note && (
+                  <p className="text-xs leading-relaxed" style={{ color: inst.website ? '#2E8B57' : '#9ca3af' }}>{inst.note}</p>
+                )}
+                {inst.website && (
+                  <a
+                    href={inst.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-auto rounded-full text-sm font-semibold px-4 py-2 transition-colors self-start"
+                    style={{ backgroundColor: "#0D2B45", color: "#fff" }}
+                  >
+                    {inst.note.startsWith('Merged into') ? `Visit ${inst.note.replace(/^Merged into /, '').replace(/ \(\d{4}\)$/, '')}` : 'Visit Website'}
+                  </a>
+                )}
               </div>
             ))}
           </div>
         )}
 
-        <p className="text-xs text-gray-400 mt-10">Source: Government of India information web sites.</p>
+        <p className="text-xs text-gray-400 mt-10">Source: Government of India information web sites. Links updated in 2026; banks that have since merged link to the bank that took them over.</p>
       </div>
     </div>
   );

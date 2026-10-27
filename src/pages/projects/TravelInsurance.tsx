@@ -65,7 +65,7 @@ function AboutProgram() {
               </div>
               <div>
                 <h3 className="font-700 mb-1" style={{ color: '#0D2B45' }}>Coverage Details</h3>
-                <p className="text-sm">Insurance offered by the Foundation is designed specifically to meet the needs of Indians, covering pre-existing conditions and ailments such as urinary tract infections. For full plan details, please visit www.kvrao.org.</p>
+                <p className="text-sm">Insurance offered by the Foundation is designed specifically to meet the needs of Indians, covering pre-existing conditions and ailments such as urinary tract infections. For full plan details, please contact our office.</p>
               </div>
               <div>
                 <h3 className="font-700 mb-1" style={{ color: '#0D2B45' }}>Why India Network Health Insurance</h3>

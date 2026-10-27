@@ -122,7 +122,7 @@ function HowItWorks() {
   const { ref, inView } = useInView();
   const steps = [
     { n: "01", title: "Become a Member", desc: "India Network Foundation members are eligible to enroll their visitors in Foundation-sponsored insurance." },
-    { n: "02", title: "Choose a Plan", desc: "Visit kvrao.org to compare visitor medical insurance plans for your family." },
+    { n: "02", title: "Choose a Plan", desc: "Contact the INF office to compare visitor medical insurance plans for your family." },
     { n: "03", title: "Enroll Your Visitor", desc: "Purchase coverage for the length of the visit — any sickness or accident is covered." },
     { n: "04", title: "Travel with Peace of Mind", desc: "Your visitors can enjoy their stay knowing they are protected." },
   ];

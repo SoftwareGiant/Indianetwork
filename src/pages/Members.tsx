@@ -52,10 +52,10 @@ const BENEFITS = [
     title: 'Unpublished, Discounted Airfares',
     desc: [
       'The Cheaper Fares Program makes airfare more affordable for Indians travelling to and from India — helping families bring stories, wisdom and culture to the younger generation of Indians in North America.',
-      'Members submit a travel inquiry through India Network Travel, and a team member searches for the cheapest available ticket within 24 hours.',
+      'Members submit a travel inquiry to India Network Travel, and a team member searches for the cheapest available ticket within 24 hours.',
     ],
-    cta: 'Visit India Network Travel',
-    href: 'http://travel.kvrao.org',
+    cta: 'Send a Travel Inquiry',
+    href: '/contact',
   },
   {
     logo: '/images/inf/insurance-logo.png',
@@ -65,8 +65,8 @@ const BENEFITS = [
       'Members can enroll their visitors in health insurance sponsored by the Foundation. India Network Health Insurance (KV Rao Insurance) provides visitor medical insurance for parents, relatives, students and temporary workers travelling to the United States.',
       'Grown out of need from the community, the plans cover all age groups and full pre-existing conditions.',
     ],
-    cta: 'Visit kvrao.org',
-    href: 'http://www.kvrao.org',
+    cta: 'Learn About Visitor Insurance',
+    href: '/projects/travel-insurance',
   },
 ]
 
@@ -93,15 +93,25 @@ function Benefits() {
                 <div className="space-y-3 text-sm text-gray-600 flex-1 mb-6" style={{ fontFamily: 'Manrope, sans-serif' }}>
                   {b.desc.map(d => <p key={d}>{d}</p>)}
                 </div>
-                <a
-                  href={b.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="self-start rounded-full px-6 py-2.5 text-sm font-700"
-                  style={{ background: '#0D2B45', color: 'white', fontFamily: 'Manrope, sans-serif' }}
-                >
-                  {b.cta} →
-                </a>
+                {b.href.startsWith('/') ? (
+                  <Link
+                    to={b.href}
+                    className="self-start rounded-full px-6 py-2.5 text-sm font-700"
+                    style={{ background: '#0D2B45', color: 'white', fontFamily: 'Manrope, sans-serif' }}
+                  >
+                    {b.cta} →
+                  </Link>
+                ) : (
+                  <a
+                    href={b.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="self-start rounded-full px-6 py-2.5 text-sm font-700"
+                    style={{ background: '#0D2B45', color: 'white', fontFamily: 'Manrope, sans-serif' }}
+                  >
+                    {b.cta} →
+                  </a>
+                )}
               </div>
             ))}
           </div>

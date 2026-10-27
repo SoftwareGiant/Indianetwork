@@ -34,7 +34,7 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "(256) 771-7772",
         "email": "info@hccna.com",
-        "url": "http://www.hccna.com"
+        "url": "https://www.hccna.com/"
       },
       {
         "name": "Birmingham Hindu Temple & Cultural Center",
@@ -74,7 +74,7 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "(661) 872-9396",
         "email": "",
-        "url": "http://www.bakersfieldhindutemple.com"
+        "url": ""
       },
       {
         "name": "Sri Venkateswara Temple / Hindu Temple Society of South California",
@@ -124,7 +124,7 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "(925) 827-0172",
         "email": "",
-        "url": "http://www.temple.org"
+        "url": "https://www.temple.org/"
       },
       {
         "name": "Palaniswami Siva Temple",
@@ -184,7 +184,7 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "(949) 494-1906",
         "email": "devotees@kalimandir.org",
-        "url": "http://kalimandir.org"
+        "url": "https://www.kalimandir.org/"
       },
       {
         "name": "Shiva Vishnu Temple / Hindu Community & Cultural Center (Livermore Temple)",
@@ -194,7 +194,7 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "(925) 449-6255",
         "email": "info@livermoretemple.org",
-        "url": "http://www.livermoretemple.org"
+        "url": "https://livermoretemple.org/"
       },
       {
         "name": "Devi Mandir of Martinez",
@@ -214,7 +214,7 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "(707) 966-2802",
         "email": "info@shreema.org",
-        "url": "http://www.shreema.org"
+        "url": ""
       },
       {
         "name": "Valley Hindu Temple / Hindu Temple Society",
@@ -234,7 +234,7 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "(562) 868-9059",
         "email": "info@radhakirshna.org",
-        "url": "http://www.radhakrishna.org"
+        "url": "https://radhakrishna.org/"
       },
       {
         "name": "Sanatan Dharm Mandir / Matiya Patidar Center",
@@ -244,7 +244,7 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "(562) 484-0822",
         "email": "hmps@matiyapatidarcenter.org",
-        "url": "http://www.matiyapatidarcenter.org"
+        "url": ""
       },
       {
         "name": "Sri Radha Raman Temple",
@@ -274,7 +274,7 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "(909) 359-4743",
         "email": "",
-        "url": "http://www.lakshminarayan.com"
+        "url": ""
       },
       {
         "name": "Shree Laxmi Narayan Mandir",
@@ -314,7 +314,7 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "(415) 922-2323",
         "email": "temple@sfvedanta.org",
-        "url": "http://www.sfvedanta.org"
+        "url": "https://sfvedanta.org/"
       },
       {
         "name": "Buddhasinndara Temple",
@@ -369,7 +369,7 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "(303) 948-9693",
         "email": "",
-        "url": "http://www.hindutempleofcolorado.org"
+        "url": "https://www.htccr.org/"
       }
     ]
   },
@@ -385,7 +385,7 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "(860) 346-8675",
         "email": "",
-        "url": "www.cvhts.org"
+        "url": "http://www.cvhts.org/"
       }
     ]
   },
@@ -400,7 +400,7 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "(302) 235-7020",
         "email": "",
-        "url": "http://www.hindutemplede.com"
+        "url": "https://hindutemplede.com/"
       }
     ]
   },
@@ -430,7 +430,7 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "(407) 699-5277",
         "email": "hscf@hscf.org",
-        "url": "http://hindutempleorlando.org"
+        "url": ""
       },
       {
         "name": "Shiva Vishnu Temple of S. Florida",
@@ -450,7 +450,7 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "(954) 438-3675",
         "email": "info@sfht.org",
-        "url": "http://www.sfht.org"
+        "url": "https://www.sfht.org/"
       },
       {
         "name": "Shirdi Sai Baba Temple",
@@ -460,7 +460,7 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "(352)-860-2181",
         "email": "",
-        "url": "http://www.floridashirdisai.org"
+        "url": ""
       },
       {
         "name": "Hindu Society of NE Florida",
@@ -470,7 +470,7 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "(904) 269-1155",
         "email": "",
-        "url": "http://www.jaxhindutemple.org"
+        "url": ""
       },
       {
         "name": "Hindu Temple of South Florida",
@@ -510,7 +510,7 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "(407) 654-0826",
         "email": "nyslnm@aol.com",
-        "url": "http://www.lakshmi-narayan.org"
+        "url": ""
       },
       {
         "name": "Gujarati Samaj Hindu Temple",
@@ -530,7 +530,7 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "(813) 962-6890",
         "email": "",
-        "url": "http://hindutempleofflorida.org"
+        "url": ""
       },
       {
         "name": "Santoshi Ma Temple",
@@ -565,7 +565,7 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "(770) 968 3490",
         "email": "info@shreeshaktimandir.org",
-        "url": "http://www.shreeshaktimandir.org"
+        "url": ""
       },
       {
         "name": "Greater Atlanta Vedic Temple",
@@ -595,7 +595,7 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "(770) 707-7210",
         "email": "",
-        "url": "http://www.hindutempleofatlanta.org"
+        "url": "https://hindutempleofatlanta.org/"
       },
       {
         "name": "India Cultural and Religious Center",
@@ -605,7 +605,7 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "(770) 436-3719",
         "email": "iaca@msn.com",
-        "url": "http://www.icrctemple.org"
+        "url": ""
       }
     ]
   },
@@ -660,7 +660,7 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "(630) 844-2252",
         "email": "manager@balajitemple.org",
-        "url": "http://www.balaji.org"
+        "url": "https://www.balaji.org/"
       },
       {
         "name": "Manav Seva Mandir",
@@ -670,7 +670,7 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "(630) 860-9797",
         "email": "",
-        "url": "http://www.netwayofindia.com"
+        "url": ""
       },
       {
         "name": "Badri Narayan Temple",
@@ -690,7 +690,7 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "(630) 972-0300",
         "email": "",
-        "url": "http://www.ramatemple.org"
+        "url": ""
       },
       {
         "name": "Sai Samsthan USA",
@@ -735,7 +735,7 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "",
         "email": "",
-        "url": "http://www.htci.org"
+        "url": "https://htci.org/"
       }
     ]
   },
@@ -750,7 +750,7 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "(913) 631-7519",
         "email": "",
-        "url": "http://www.htccofkc.org"
+        "url": "https://htccofkc.org/"
       }
     ]
   },
@@ -765,7 +765,7 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "(502) 429-8888",
         "email": "",
-        "url": "http://www.kytemple.org"
+        "url": ""
       }
     ]
   },
@@ -825,7 +825,7 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "(301) 434-1000",
         "email": "",
-        "url": "http://hindu-temple.org"
+        "url": ""
       },
       {
         "name": "Greater Baltimore Hindu-Jain Temple",
@@ -835,7 +835,7 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "(410) 833-1931",
         "email": "",
-        "url": "http://www.baltimoretemple.org"
+        "url": "https://www.baltimoretemple.org/"
       },
       {
         "name": "Murugan Temple of North America",
@@ -845,7 +845,7 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "(301) 552-4889",
         "email": "info@murugatemple.org",
-        "url": "http://www.murugantemple.org"
+        "url": "https://murugantemple.org/"
       },
       {
         "name": "Sri Siva Vishnu Temple",
@@ -855,7 +855,7 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "(301) 552-3335",
         "email": "ssvt@ssvt.org",
-        "url": "http://www.ssvt.org"
+        "url": "https://ssvt.org/"
       },
       {
         "name": "India House of Worship",
@@ -865,7 +865,7 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "(301) 384-4090",
         "email": "shahbp@hotmail.com",
-        "url": "http://www.ihow.org"
+        "url": ""
       },
       {
         "name": "Shri Mangal Mandir",
@@ -890,7 +890,7 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "(508) 881-5775",
         "email": "chairman@nehti.org",
-        "url": "http://www.nehti.org"
+        "url": "https://srilakshmi.org/"
       }
     ]
   },
@@ -905,7 +905,7 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "(734) 981-8730",
         "email": "",
-        "url": "http://thehindutemple.org"
+        "url": "https://www.thehindutemple.org/"
       },
       {
         "name": "Paschima Kashi Viswanatha Temple / Kashi Temple",
@@ -915,7 +915,7 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "(810) 732-1760",
         "email": "",
-        "url": "http://kashitemple.org"
+        "url": ""
       },
       {
         "name": "Bharatiya Temple of Lansing",
@@ -925,7 +925,7 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "(517) 339-6337",
         "email": "",
-        "url": "http://www.lansingtemple.org"
+        "url": "http://www.lansingtemple.org/"
       },
       {
         "name": "Parashakthi (The Eternal Mother) Temple",
@@ -935,7 +935,7 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "(248) 322-4731",
         "email": "omshakthi@parashakthi.org",
-        "url": "http://www.parashakthitemple.org"
+        "url": "https://www.parashakthitemple.org/"
       },
       {
         "name": "Bharatiya Temple of Troy",
@@ -945,7 +945,7 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "(248) 879-2552",
         "email": "webpundit@bharatiyatemple.org",
-        "url": "http://www.bharatiyatemple.org"
+        "url": ""
       }
     ]
   },
@@ -960,7 +960,7 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "",
         "email": "",
-        "url": "http://www.hindumandirmn.org"
+        "url": "https://www.hindutemplemn.org/"
       },
       {
         "name": "Shri Gaayatri Mandir",
@@ -970,7 +970,7 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "",
         "email": "",
-        "url": "http://shrigaayatrimandir.tripod.com"
+        "url": ""
       }
     ]
   },
@@ -1000,7 +1000,7 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "(636) 230-3300",
         "email": "hindutemple@accessus.net",
-        "url": "http://www.hindutemplestlouis.org"
+        "url": "https://www.hindutemplestlouis.org/"
       }
     ]
   },
@@ -1030,7 +1030,7 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "(856) 768-3134",
         "email": "",
-        "url": "http://www.indiatemple.org"
+        "url": "https://www.indiatemple.org/"
       },
       {
         "name": "Sri Venkateshwara Temple (Balaji Mandir) and Community Center",
@@ -1041,17 +1041,17 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "(908) 725-4477",
         "email": "",
-        "url": "http://www.venkateswara.org"
+        "url": ""
       },
       {
-        "name": "Hindu Mandir / Community Cente",
+        "name": "Hindu Mandir / Community Center",
         "address": [
           "1 Gaston Ave.",
           "Garfield, NJ 07028"
         ],
         "phone": "(973) 546-7331",
         "email": "",
-        "url": "http://www.hindumandirnj.org"
+        "url": "http://hindumandirnj.org/"
       },
       {
         "name": "Shiva Mandir",
@@ -1093,7 +1093,7 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "(201) 997-5556",
         "email": "",
-        "url": "http://www.hindumandirnj.org"
+        "url": "http://hindumandirnj.org/"
       },
       {
         "name": "Shree Ram Mandir",
@@ -1114,7 +1114,7 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "(732) 821-0404",
         "email": "temple@vedmandir.org",
-        "url": "http://www.vedmandir.org"
+        "url": "https://www.vedmandir.org/"
       },
       {
         "name": "Hindu American Temple & Cultural Center",
@@ -1125,7 +1125,7 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "(732) 972-5562",
         "email": "gundanna@hotmail.com",
-        "url": "http://www.krishnatemple.org"
+        "url": "https://krishnatemple.org/"
       },
       {
         "name": "Savi Lamba",
@@ -1145,7 +1145,7 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "(732) 254-0061",
         "email": "prikesh_shah@hotmail.com",
-        "url": "http://www.dwarkadhishtemple.org"
+        "url": "https://dwarkadhishtemple.org/"
       },
       {
         "name": "Sanatan Mandir",
@@ -1166,7 +1166,7 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "(609) 965-0627",
         "email": "",
-        "url": "http://www.achindutemple.org"
+        "url": ""
       },
       {
         "name": "Ananda Mandir",
@@ -1176,7 +1176,7 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "(732) 873-9821",
         "email": "",
-        "url": "http://anandamandir.org"
+        "url": "https://www.anandamandir.org/"
       },
       {
         "name": "Durga Temple",
@@ -1223,7 +1223,7 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "(718) 460-8484",
         "email": "",
-        "url": "http://www.nyganeshtemple.org"
+        "url": "https://nyganeshtemple.org/"
       },
       {
         "name": "Hindu Temple and Cultural Society of Western New York",
@@ -1233,7 +1233,7 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "(716) 636-5967",
         "email": "",
-        "url": "http://www.hcs.org"
+        "url": ""
       },
       {
         "name": "Brahmanoor Kali Temple",
@@ -1283,7 +1283,7 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "(585)-427-8091",
         "email": "",
-        "url": "http://www.hindutempleofrochester.com"
+        "url": "https://hindutempleofrochester.com/"
       },
       {
         "name": "Maha Samprokshanam (Sri Ranganatha Temple)",
@@ -1293,7 +1293,7 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "(845) 364-9790",
         "email": "",
-        "url": "http://www.ranganatha.org"
+        "url": "http://www.ranganatha.org/"
       },
       {
         "name": "Shri Lakshmi Narayan Mandir",
@@ -1303,7 +1303,7 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "718-945-4963",
         "email": "nyslnm@aol.com",
-        "url": "http://www.lakshmi-narayan.org"
+        "url": ""
       },
       {
         "name": "Hindu Samaj Temple",
@@ -1338,7 +1338,7 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "(919) 468-0040",
         "email": "",
-        "url": "http://svtemplenc.org"
+        "url": "https://www.svtemplenc.org/"
       },
       {
         "name": "Hindu Centre",
@@ -1383,7 +1383,7 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "(513) 528-3714",
         "email": "",
-        "url": "http://www.cincinnatitemple.com"
+        "url": "http://cincinnatitemple.com/"
       },
       {
         "name": "Bharatiya Hindu Temple of Central Ohio",
@@ -1393,7 +1393,7 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "(740) 369-0717",
         "email": "hindutemplecol@myprimus.com",
-        "url": "http://www.bharatiyahindutemple.org"
+        "url": ""
       },
       {
         "name": "Hindu Temple of Dayton",
@@ -1483,7 +1483,7 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "(215) 652-4447",
         "email": "",
-        "url": "http://www.b-temple.org"
+        "url": "https://b-temple.org/"
       },
       {
         "name": "Hindu Temple Society",
@@ -1493,7 +1493,7 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "(610) 264-2810",
         "email": "",
-        "url": "http://www.hindutemple-allentown.org"
+        "url": ""
       },
       {
         "name": "Hindu Jain Temple",
@@ -1503,7 +1503,7 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "(724) 325-2073",
         "email": "",
-        "url": "http://www.hindujaintemple.net"
+        "url": ""
       },
       {
         "name": "Sri Shirdi Sai Baba Temple",
@@ -1523,7 +1523,7 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "(412) 373-3380",
         "email": "srivaru@svtemple.org",
-        "url": "http://svtemple.org"
+        "url": "https://svtemple.org/"
       },
       {
         "name": "H.A.R.I. Temple",
@@ -1553,7 +1553,7 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "(570) 754-7067",
         "email": "",
-        "url": "http://www.vraj.org"
+        "url": "http://www.vraj.org/"
       },
       {
         "name": "Sri Rajeshwari Peetham",
@@ -1578,7 +1578,7 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "(803) 772-9650",
         "email": "",
-        "url": "http://www.hindutemplesc.org"
+        "url": "http://www.hindutemplesc.org/"
       },
       {
         "name": "Hindu Temple",
@@ -1604,7 +1604,7 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "(615) 356-7207",
         "email": "",
-        "url": "http://www.ganeshtemple.org"
+        "url": ""
       },
       {
         "name": "India Cultural Center and Temple",
@@ -1614,7 +1614,7 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "(901) 202-6070",
         "email": "",
-        "url": "http://www.iccmemphis.org"
+        "url": ""
       }
     ]
   },
@@ -1630,7 +1630,7 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "(512) 288-7180",
         "email": "",
-        "url": "http://JKP.org"
+        "url": "https://www.jkp.org.in/"
       },
       {
         "name": "Omkarnath Temple",
@@ -1691,7 +1691,7 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "(972) 445-3111",
         "email": "",
-        "url": "http://www.dfwhindutemple.org"
+        "url": "https://www.dfwhindutemple.org/"
       },
       {
         "name": "Hindu Association of West Texas",
@@ -1711,7 +1711,7 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "(281) 489-0358",
         "email": "",
-        "url": "http://www.meenakshi.org"
+        "url": "https://www.meenakshi.org/"
       }
     ]
   },
@@ -1726,7 +1726,7 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "(801) 253-3592",
         "email": "",
-        "url": "http://www.sriganeshtempleofutah.com"
+        "url": ""
       }
     ]
   },
@@ -1741,7 +1741,7 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "(703) 378-8401",
         "email": "",
-        "url": "http://www.rajdhanimandir.org"
+        "url": "https://rajdhanimandir.org/"
       },
       {
         "name": "Hindu Temple of Hampton Roads",
@@ -1761,7 +1761,7 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "(804) 346-9954",
         "email": "",
-        "url": "http://hinducenterofvirginia.org"
+        "url": "http://hinducenterofvirginia.org/"
       },
       {
         "name": "Durga Temple",
@@ -1771,7 +1771,7 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "(703) 690-9355",
         "email": "",
-        "url": "http://www.durgatemple.org"
+        "url": "https://www.durgatemple.org/"
       }
     ]
   },
@@ -1786,7 +1786,7 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "(425) 483-7115",
         "email": "",
-        "url": "http://www.htccwa.org"
+        "url": "https://www.htccwa.org/"
       }
     ]
   },
@@ -1817,7 +1817,7 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
         ],
         "phone": "(262) 695-1200",
         "email": "",
-        "url": "http://hindutemplewis.com"
+        "url": ""
       }
     ]
   }
@@ -1826,14 +1826,14 @@ export const templesByState: { state: string; temples: Temple[] }[] = [
 export const hinduOrganizations: { name: string; url: string }[] = [
   {
     "name": "International Society for Krishna Consciousness (ISKCON)",
-    "url": "http://www.iskcon.org/hkindex/americas.htm"
+    "url": "https://www.iskcon.org/"
   },
   {
-    "name": "Swaminarayan",
-    "url": "http://www.swaminarayan.org/globalnetwork/america"
+    "name": "BAPS Swaminarayan Sanstha",
+    "url": "http://www.swaminarayan.org/globalnetwork/america/"
   },
   {
     "name": "Vedanta Society",
-    "url": "http://www.sfvendanta.org/reachuscenters.html"
+    "url": "https://sfvedanta.org/"
   }
 ]
