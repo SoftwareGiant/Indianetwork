@@ -1,0 +1,19 @@
+{
+  "name": "inf-server",
+  "version": "1.0.0",
+  "private": true,
+  "description": "India Network Foundation API server: BMI Travel Assistance integration and website form storage",
+  "type": "module",
+  "main": "src/index.js",
+  "engines": {
+    "node": ">=20.6"
+  },
+  "scripts": {
+    "dev": "node --watch --env-file=.env src/index.js",
+    "start": "node --env-file=.env src/index.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "mongodb": "^6.21.0"
+  }
+}
