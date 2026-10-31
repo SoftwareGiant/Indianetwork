@@ -1,4 +1,4 @@
-import { createBrowserRouter } from 'react-router'
+import { createBrowserRouter, redirect } from 'react-router'
 import Root from './components/Root'
 import HomePage from './pages/Home'
 import AboutPage from './pages/About'
@@ -26,10 +26,9 @@ import PastProjectsPage from './pages/projects/PastProjects'
 import TravelInsurancePage from './pages/projects/TravelInsurance'
 import NyuScholarshipPage from './pages/projects/NyuScholarship'
 import AcademicTravelGrantsPage from './pages/projects/AcademicTravelGrants'
-import ExplorerBasicPage from './pages/projects/insurance/ExplorerBasic'
-import IndiaTravelerPage from './pages/projects/insurance/IndiaTraveler'
-import EliteProtectionPage from './pages/projects/insurance/EliteProtection'
-import CertificatePage from './pages/projects/insurance/Certificate'
+import PlanDetailsPage from './pages/projects/insurance/PlanDetails'
+import CheckoutPage from './pages/projects/insurance/Checkout'
+import VoucherLookupPage from './pages/projects/insurance/VoucherLookup'
 
 // Policy pages
 import PrivacyPolicyPage from './pages/PrivacyPolicy'
@@ -62,7 +61,11 @@ import PressReleasesPage from './pages/projects/PressReleases'
 // Membership
 import MembersPage from './pages/Members'
 
+// Admin panel (outside the site layout)
+import AdminPage from './pages/admin/Admin'
+
 export const router = createBrowserRouter([
+  { path: '/admin', Component: AdminPage },
   {
     path: '/',
     Component: Root,
@@ -87,10 +90,11 @@ export const router = createBrowserRouter([
       { path: 'projects/past-projects', Component: PastProjectsPage },
       { path: 'projects/past', Component: PastProjectsPage },
       { path: 'projects/travel-insurance', Component: TravelInsurancePage },
-      { path: 'projects/insurance/explorer-basic', Component: ExplorerBasicPage },
-      { path: 'projects/insurance/india-traveler', Component: IndiaTravelerPage },
-      { path: 'projects/insurance/elite-protection', Component: EliteProtectionPage },
-      { path: 'projects/insurance/certificate', Component: CertificatePage },
+      { path: 'projects/insurance/plan', Component: PlanDetailsPage },
+      { path: 'projects/insurance/checkout', Component: CheckoutPage },
+      { path: 'voucher', Component: VoucherLookupPage },
+      // Old placeholder plan pages now go to the live quote
+      { path: 'projects/insurance/:old', loader: () => redirect('/projects/travel-insurance') },
       { path: 'projects/nyu-scholarship', Component: NyuScholarshipPage },
       { path: 'projects/academic-travel-grants', Component: AcademicTravelGrantsPage },
       { path: 'projects/inf-initiatives', Component: InfInitiativesPage },

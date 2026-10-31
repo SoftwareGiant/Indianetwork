@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router'
 import { useInView } from '../../hooks/useInView'
+import { submitForm, type FormError } from '../../lib/forms'
 
 function scrollToApply(e: React.MouseEvent) {
   e.preventDefault()
@@ -174,15 +175,25 @@ function ApplicationForm() {
   const { ref, inView } = useInView()
   const [form, setForm] = useState({ name: '', dob: '', address: '', education: '', exam: '' })
   const [submitted, setSubmitted] = useState(false)
+  const [sending, setSending] = useState(false)
+  const [error, setError] = useState('')
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value })
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    if (form.name && form.dob && form.address && form.education && form.exam) {
+    if (sending || !(form.name && form.dob && form.address && form.education && form.exam)) return
+    setSending(true)
+    setError('')
+    try {
+      await submitForm('scholarship', form)
       setSubmitted(true)
+    } catch (err) {
+      setError((err as FormError).message)
+    } finally {
+      setSending(false)
     }
   }
 
@@ -234,12 +245,14 @@ function ApplicationForm() {
                   <option value="GMAT">GMAT</option>
                 </select>
               </div>
+              {error && <p role="alert" className="text-sm" style={{ color: '#dc2626' }}>{error}</p>}
               <button
                 type="submit"
-                className="mt-2 py-3.5 rounded-full font-bold text-white transition-all hover:-translate-y-1 hover:scale-105"
+                disabled={sending}
+                className="mt-2 py-3.5 rounded-full font-bold text-white transition-all hover:-translate-y-1 hover:scale-105 disabled:opacity-60 disabled:hover:translate-y-0 disabled:hover:scale-100"
                 style={{ background: '#F47C20' }}
               >
-                Submit Application
+                {sending ? 'Submitting…' : 'Submit Application'}
               </button>
             </form>
           )}

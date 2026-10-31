@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { submitForm, type FormError } from '../lib/forms'
 import { Link } from 'react-router'
 import logo from '../imports/logo_of_india_network-removebg-preview.png'
 
@@ -28,6 +29,22 @@ const footerLinks = {
 
 export default function Footer() {
   const [email, setEmail] = useState('')
+  const [status, setStatus] = useState<'idle' | 'sending' | 'done'>('idle')
+  const [error, setError] = useState('')
+
+  async function subscribe() {
+    if (status === 'sending') return
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) { setError('Please enter a valid email address.'); return }
+    setStatus('sending')
+    setError('')
+    try {
+      await submitForm('newsletter', { email, source: 'footer' })
+      setStatus('done')
+    } catch (err) {
+      setError((err as FormError).message)
+      setStatus('idle')
+    }
+  }
 
   return (
     <footer style={{ backgroundColor: '#0D2B45' }} className="pt-20 pb-10">
@@ -44,22 +61,30 @@ export default function Footer() {
             </p>
             <div>
               <p className="text-white/70 text-sm mb-3" style={{ fontWeight: 600 }}>Stay informed</p>
-              <div className="flex gap-2">
-                <input
-                  type="email"
-                  value={email}
-                  onChange={e => setEmail(e.target.value)}
-                  placeholder="Your email address"
-                  className="flex-1 min-w-0 px-4 py-2.5 rounded-xl text-sm text-white placeholder-white/30 outline-none"
-                  style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.12)' }}
-                />
-                <button
-                  className="px-4 py-2.5 rounded-xl text-sm text-white transition-all duration-200 hover:opacity-90"
-                  style={{ background: '#F47C20', fontWeight: 600 }}
-                >
-                  Subscribe
-                </button>
-              </div>
+              {status === 'done' ? (
+                <p className="text-sm" style={{ color: '#F47C20', fontWeight: 600 }}>✓ You're subscribed. Thank you!</p>
+              ) : (
+                <div className="flex gap-2">
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={e => { setEmail(e.target.value); setError('') }}
+                    onKeyDown={e => e.key === 'Enter' && subscribe()}
+                    placeholder="Your email address"
+                    className="flex-1 min-w-0 px-4 py-2.5 rounded-xl text-sm text-white placeholder-white/30 outline-none"
+                    style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.12)' }}
+                  />
+                  <button
+                    onClick={subscribe}
+                    disabled={status === 'sending'}
+                    className="px-4 py-2.5 rounded-xl text-sm text-white transition-all duration-200 hover:opacity-90 disabled:opacity-60"
+                    style={{ background: '#F47C20', fontWeight: 600 }}
+                  >
+                    {status === 'sending' ? '…' : 'Subscribe'}
+                  </button>
+                </div>
+              )}
+              {error && <p role="alert" className="text-xs mt-2" style={{ color: '#f87171' }}>{error}</p>}
             </div>
           </div>
 

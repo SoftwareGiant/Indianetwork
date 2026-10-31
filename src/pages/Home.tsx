@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router'
 import { useInView } from '../hooks/useInView'
+import { submitForm, type FormError } from '../lib/forms'
 import { useCountUp } from '../hooks/useCountUp'
-import { DonorFields, validateDonorInfo, type DonorInfo, type DonorErrors } from '../components/DonorFields'
+import { DonorFields, validateDonorInfo, parseAmount, type DonorInfo, type DonorErrors } from '../components/DonorFields'
 
 // ── Hero ─────────────────────────────────────────────────────────────────────
 function Hero() {
@@ -385,6 +386,9 @@ function DonationSection() {
   const [donor, setDonor] = useState<DonorInfo>({ name: '', mobile: '', email: '' })
   const [errors, setErrors] = useState<DonorErrors>({})
   const [submitted, setSubmitted] = useState(false)
+  const [sending, setSending] = useState(false)
+  const [sendError, setSendError] = useState('')
+  const amount = selected >= 0 ? parseAmount(donationAmounts[selected].usd) : Number(custom)
   const { ref, inView } = useInView(0.2)
 
   const handleChange = (field: keyof DonorInfo, value: string) => {
@@ -392,10 +396,21 @@ function DonationSection() {
     if (errors[field]) setErrors(prev => ({ ...prev, [field]: undefined }))
   }
 
-  const handleDonate = () => {
+  const handleDonate = async () => {
     const e = validateDonorInfo(donor)
     setErrors(e)
-    if (Object.keys(e).length === 0) setSubmitted(true)
+    setSendError('')
+    if (!(amount > 0)) { setSendError('Please choose or enter an amount.'); return }
+    if (Object.keys(e).length || sending) return
+    setSending(true)
+    try {
+      await submitForm('donation', { ...donor, amount, source: 'home-page' })
+      setSubmitted(true)
+    } catch (err) {
+      setSendError((err as FormError).message)
+    } finally {
+      setSending(false)
+    }
   }
 
   return (
@@ -427,7 +442,7 @@ function DonationSection() {
               <div className="p-6 sm:p-10 text-center">
                 <div className="text-5xl mb-4">🙏</div>
                 <h3 className="text-white font-800 text-xl mb-3" style={{ fontWeight: 800 }}>Thank You, {donor.name.split(' ')[0]}!</h3>
-                <p className="text-white/60 text-sm leading-relaxed mb-6">A confirmation will be sent to <span style={{ color: '#F47C20' }}>{donor.email}</span>.</p>
+                <p className="text-white/60 text-sm leading-relaxed mb-6">We have received your pledge of {selected >= 0 ? donationAmounts[selected].usd : `$${custom}`}. Our team will contact you at <span style={{ color: '#F47C20' }}>{donor.email}</span> to complete your donation.</p>
                 <button onClick={() => { setSubmitted(false); setDonor({ name: '', mobile: '', email: '' }) }}
                   className="px-6 py-3 rounded-full text-white text-sm font-600 hover:opacity-90"
                   style={{ background: '#F47C20', fontWeight: 600 }}>
@@ -469,10 +484,11 @@ function DonationSection() {
                     <span className="w-6 h-6 rounded-full text-xs font-700 flex items-center justify-center text-white" style={{ background: '#F47C20', fontWeight: 700 }}>3</span>
                     Payment
                   </h4>
-                  <button onClick={handleDonate}
-                    className="w-full py-4 rounded-xl font-700 text-white text-base transition-all duration-200 hover:scale-105 hover:shadow-xl active:scale-95"
+                  {sendError && <p role="alert" className="text-sm mb-3" style={{ color: '#f87171' }}>{sendError}</p>}
+                  <button onClick={handleDonate} disabled={sending}
+                    className="w-full py-4 rounded-xl font-700 text-white text-base transition-all duration-200 hover:scale-105 hover:shadow-xl active:scale-95 disabled:opacity-60 disabled:hover:scale-100"
                     style={{ background: '#F47C20', fontWeight: 700 }}>
-                    Donate Securely →
+                    {sending ? 'Submitting…' : 'Donate Securely →'}
                   </button>
                   <p className="text-white/30 text-xs text-center mt-4">Secured by SSL · Contributions are tax-exempt in the United States</p>
                 </div>

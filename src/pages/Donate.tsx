@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { Link } from 'react-router'
 import { useInView } from '../hooks/useInView'
-import { InputField, DonorFields, validateDonorInfo, type DonorInfo, type DonorErrors } from '../components/DonorFields'
+import { submitForm, type FormError } from '../lib/forms'
+import { InputField, DonorFields, validateDonorInfo, parseAmount, type DonorInfo, type DonorErrors } from '../components/DonorFields'
 
 // ── Page Hero ─────────────────────────────────────────────────────────────────
 function PageHero() {
@@ -78,16 +79,30 @@ function DonationForm() {
   const [donor, setDonor] = useState<DonorInfo>({ name: '', mobile: '', email: '' })
   const [errors, setErrors] = useState<DonorErrors>({})
   const [submitted, setSubmitted] = useState(false)
+  const [sending, setSending] = useState(false)
+  const [sendError, setSendError] = useState('')
+  const amount = selected >= 0 ? parseAmount(donationAmounts[selected].usd) : Number(custom)
 
   const handleChange = (field: keyof DonorInfo, value: string) => {
     setDonor(prev => ({ ...prev, [field]: value }))
     if (errors[field]) setErrors(prev => ({ ...prev, [field]: undefined }))
   }
 
-  const handleDonate = () => {
+  const handleDonate = async () => {
     const e = validateDonorInfo(donor)
     setErrors(e)
-    if (Object.keys(e).length === 0) setSubmitted(true)
+    setSendError('')
+    if (!(amount > 0)) { setSendError('Please choose or enter an amount.'); return }
+    if (Object.keys(e).length || sending) return
+    setSending(true)
+    try {
+      await submitForm('donation', { ...donor, amount, source: 'donate-page' })
+      setSubmitted(true)
+    } catch (err) {
+      setSendError((err as FormError).message)
+    } finally {
+      setSending(false)
+    }
   }
 
   if (submitted) {
@@ -98,10 +113,8 @@ function DonationForm() {
           Thank You, {donor.name.split(' ')[0]}!
         </h3>
         <p className="text-white/60 text-base leading-relaxed mb-6">
-          Your donation of{' '}
-          {selected >= 0 ? donationAmounts[selected]?.usd : `$${custom}`}{' '}
-          has been received. A confirmation will be sent to{' '}
-          <span style={{ color: '#F47C20' }}>{donor.email}</span>.
+          We have received your pledge of {selected >= 0 ? donationAmounts[selected]?.usd : `$${custom}`}.
+          Our team will contact you at <span style={{ color: '#F47C20' }}>{donor.email}</span> to complete your donation.
         </p>
         <button
           onClick={() => { setSubmitted(false); setDonor({ name: '', mobile: '', email: '' }) }}
@@ -160,10 +173,11 @@ function DonationForm() {
           <span className="w-6 h-6 rounded-full text-xs font-700 flex items-center justify-center flex-shrink-0 text-white" style={{ background: '#F47C20', fontWeight: 700 }}>3</span>
           Payment
         </h4>
-        <button onClick={handleDonate}
-          className="w-full py-4 rounded-xl font-700 text-white text-base transition-all duration-200 hover:scale-105 hover:shadow-xl active:scale-95"
+        {sendError && <p role="alert" className="text-sm mb-3" style={{ color: '#f87171' }}>{sendError}</p>}
+        <button onClick={handleDonate} disabled={sending}
+          className="w-full py-4 rounded-xl font-700 text-white text-base transition-all duration-200 hover:scale-105 hover:shadow-xl active:scale-95 disabled:opacity-60 disabled:hover:scale-100"
           style={{ background: '#F47C20', fontWeight: 700 }}>
-          Donate Securely →
+          {sending ? 'Submitting…' : 'Donate Securely →'}
         </button>
         <div className="flex items-center justify-center gap-4 mt-4">
           {['🔒 SSL Secured', '🇺🇸 Tax-Exempt in US', '🏢 Matching Gifts'].map(t => (

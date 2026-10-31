@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { submitForm, type FormError } from '../lib/forms'
 import { Link } from 'react-router'
 import { useInView } from '../hooks/useInView'
 
@@ -118,6 +119,8 @@ function ContactForm() {
   const [form, setForm] = useState({ name: '', email: '', mobile: '', subject: '', message: '' })
   const [errors, setErrors] = useState<FormErrors>({})
   const [sent, setSent] = useState(false)
+  const [sending, setSending] = useState(false)
+  const [sendError, setSendError] = useState('')
 
   const set = (field: keyof typeof form) => (val: string) => {
     setForm(prev => ({ ...prev, [field]: val }))
@@ -136,7 +139,19 @@ function ContactForm() {
     return Object.keys(e).length === 0
   }
 
-  const handleSend = () => { if (validate()) setSent(true) }
+  const handleSend = async () => {
+    if (!validate() || sending) return
+    setSending(true)
+    setSendError('')
+    try {
+      await submitForm('contact', form)
+      setSent(true)
+    } catch (err) {
+      setSendError((err as FormError).message)
+    } finally {
+      setSending(false)
+    }
+  }
 
   const fieldStyle = (hasError?: string) => ({
     background: 'white',
@@ -234,10 +249,11 @@ function ContactForm() {
         </div>
       </div>
 
-      <button onClick={handleSend}
-        className="w-full py-4 rounded-xl font-700 text-white text-base transition-all duration-200 hover:scale-105 hover:shadow-xl active:scale-95"
+      {sendError && <p role="alert" className="text-sm mb-3" style={{ color: '#ef4444' }}>{sendError}</p>}
+      <button onClick={handleSend} disabled={sending}
+        className="w-full py-4 rounded-xl font-700 text-white text-base transition-all duration-200 hover:scale-105 hover:shadow-xl active:scale-95 disabled:opacity-60 disabled:hover:scale-100"
         style={{ background: '#F47C20', fontWeight: 700 }}>
-        Send Message →
+        {sending ? 'Sending…' : 'Send Message →'}
       </button>
     </div>
   )

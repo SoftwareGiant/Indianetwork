@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router'
 import { useInView } from '../../hooks/useInView'
+import { submitForm, type FormError } from '../../lib/forms'
 
 function PageHero() {
   return (
@@ -90,16 +91,28 @@ interface ProjectForm {
 function StartAProjectForm() {
   const [form, setForm] = useState<ProjectForm>({ name: '', detail: '', amount: '' })
   const [submitted, setSubmitted] = useState(false)
+  const [sending, setSending] = useState(false)
+  const [error, setError] = useState('')
 
   const inputClass = "w-full px-4 py-3.5 rounded-xl text-sm outline-none transition-colors"
   const inputStyle = { border: '1px solid rgba(13,43,69,0.15)', background: 'white' }
   const labelClass = "block text-sm font-700 mb-1.5"
   const labelStyle = { color: '#0D2B45', fontFamily: 'Manrope, sans-serif' }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
-    if (!form.name.trim() || !form.detail.trim()) return
-    setSubmitted(true)
+    if (sending) return
+    if (!form.name.trim() || !form.detail.trim()) { setError('Please enter your name and the project details.'); return }
+    setSending(true)
+    setError('')
+    try {
+      await submitForm('member-project', { name: form.name, detail: form.detail, amount: form.amount || undefined })
+      setSubmitted(true)
+    } catch (err) {
+      setError((err as FormError).message)
+    } finally {
+      setSending(false)
+    }
   }
 
   return (
@@ -150,12 +163,14 @@ function StartAProjectForm() {
                     />
                   </div>
                 </div>
+                {error && <p role="alert" className="text-sm" style={{ color: '#dc2626' }}>{error}</p>}
                 <button
                   type="submit"
-                  className="w-full py-4 rounded-full text-white font-700 text-base mt-2"
+                  disabled={sending}
+                  className="w-full py-4 rounded-full text-white font-700 text-base mt-2 disabled:opacity-60"
                   style={{ background: '#F47C20', fontFamily: 'Manrope, sans-serif' }}
                 >
-                  Submit Project
+                  {sending ? 'Submitting…' : 'Submit Project'}
                 </button>
               </form>
             </>

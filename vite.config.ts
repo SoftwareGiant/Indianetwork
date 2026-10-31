@@ -6,6 +6,11 @@ import path from 'node:path'
 import siteConfiguration from './.figma/make/site.json'
 
 // Vite config — https://vitejs.dev/config/
+// Forward /api requests to the Node server in server/ (keeps BMI credentials off the browser)
+const apiProxy = {
+  '/api': { target: process.env.API_SERVER_URL || 'http://localhost:4000', changeOrigin: true },
+}
+
 export default defineConfig(({ mode }) => {
   // .figma/make/deploy-preview passes `--mode development` for cached-preview builds.
   const emitSourcemaps = mode === 'development'
@@ -33,11 +38,13 @@ export default defineConfig(({ mode }) => {
       host: '0.0.0.0',
       port: parseInt(process.env.PORT || '8443'),
       strictPort: true,
-      watch: { ignored: ['**/.figma/**'] },
+      watch: { ignored: ['**/.figma/**', '**/server/**'] },
+      proxy: apiProxy,
     },
     preview: {
       host: '0.0.0.0',
       port: parseInt(process.env.PORT || '8443'),
+      proxy: apiProxy,
     },
   }
 })

@@ -65,6 +65,11 @@ export function InputField({
 export type DonorInfo = { name: string; mobile: string; email: string }
 export type DonorErrors = Partial<Record<keyof DonorInfo, string>>
 
+// "$2,500" -> 2500
+export function parseAmount(usd: string) {
+  return Number(usd.replace(/[^\d.]/g, ''))
+}
+
 export function validateDonorInfo(info: DonorInfo): DonorErrors {
   const e: DonorErrors = {}
   if (!info.name.trim()) e.name = 'Full name is required'

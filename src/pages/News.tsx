@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { submitForm, type FormError } from '../lib/forms'
 import { Link } from 'react-router'
 import { useInView } from '../hooks/useInView'
 
@@ -227,9 +228,22 @@ function PastGallery() {
 function Newsletter() {
   const [email, setEmail] = useState('')
   const [subscribed, setSubscribed] = useState(false)
+  const [sending, setSending] = useState(false)
+  const [error, setError] = useState('')
 
-  const handleSubscribe = () => {
-    if (email.includes('@')) setSubscribed(true)
+  const handleSubscribe = async () => {
+    if (sending) return
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) { setError('Please enter a valid email address.'); return }
+    setSending(true)
+    setError('')
+    try {
+      await submitForm('newsletter', { email, source: 'news-page' })
+      setSubscribed(true)
+    } catch (err) {
+      setError((err as FormError).message)
+    } finally {
+      setSending(false)
+    }
   }
 
   return (
@@ -248,13 +262,14 @@ function Newsletter() {
             <input type="email" placeholder="your@email.com" value={email} onChange={e => setEmail(e.target.value)}
               onKeyDown={e => e.key === 'Enter' && handleSubscribe()}
               className="flex-1 px-5 py-4 rounded-xl text-gray-800 placeholder-gray-400 text-sm outline-none" />
-            <button onClick={handleSubscribe}
-              className="px-7 py-4 rounded-xl font-700 text-sm whitespace-nowrap transition-all duration-200 hover:scale-105"
+            <button onClick={handleSubscribe} disabled={sending}
+              className="px-7 py-4 rounded-xl font-700 text-sm whitespace-nowrap transition-all duration-200 hover:scale-105 disabled:opacity-60 disabled:hover:scale-100"
               style={{ background: '#0D2B45', color: 'white', fontWeight: 700 }}>
-              Subscribe
+              {sending ? 'Subscribing…' : 'Subscribe'}
             </button>
           </div>
         )}
+        {error && !subscribed && <p role="alert" className="text-white text-sm mt-3" style={{ fontWeight: 600 }}>{error}</p>}
         <p className="text-white/45 text-xs mt-4">Unsubscribe anytime.</p>
       </div>
     </section>

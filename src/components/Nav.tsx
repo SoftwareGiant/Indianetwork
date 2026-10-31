@@ -28,6 +28,9 @@ const navLinks = [
   { label: 'Contact', to: '/contact' },
 ]
 
+// Shield with a check: insurance cover
+const voucherIcon = <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M8 1.5 2.5 3.5v4c0 3.3 2.3 5.9 5.5 7 3.2-1.1 5.5-3.7 5.5-7v-4L8 1.5z" /><path d="m5.5 8 1.8 1.8L10.7 6.4" /></svg>
+
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
@@ -156,9 +159,14 @@ export default function Nav() {
               <div className="text-white/60 text-xs mt-1.5" style={{ fontWeight: 500, letterSpacing: '0.02em' }}>Serving the Indian Community Since 1988</div>
             </div>
           </Link>
-          <Link to="/donate" className="px-6 py-2.5 rounded-full text-white text-sm transition-all duration-200 hover:scale-105 active:scale-95 whitespace-nowrap" style={{ background: '#F47C20', fontWeight: 600 }}>
-            Donate Now
-          </Link>
+          <div className="flex items-center gap-4">
+            <Link to="/voucher" className="flex items-center gap-2 px-5 py-2.5 rounded-full text-white text-sm transition-all duration-200 hover:bg-white/10 whitespace-nowrap" style={{ border: '1px solid rgba(255,255,255,0.3)', fontWeight: 600 }}>
+              {voucherIcon} Find Voucher
+            </Link>
+            <Link to="/donate" className="px-6 py-2.5 rounded-full text-white text-sm transition-all duration-200 hover:scale-105 active:scale-95 whitespace-nowrap" style={{ background: '#F47C20', fontWeight: 600 }}>
+              Donate Now
+            </Link>
+          </div>
         </div>
       </div>
 
@@ -238,9 +246,15 @@ export default function Nav() {
           ))}
         </div>
 
-        <Link to="/donate" className="shrink-0 px-5 py-2 rounded-full text-white text-sm transition-all duration-500 hover:scale-105 whitespace-nowrap" style={{ background: '#F47C20', fontWeight: 600, opacity: compact ? 1 : 0, pointerEvents: compact ? 'auto' : 'none' }} tabIndex={compact ? 0 : -1}>
-          Donate Now
-        </Link>
+        <div className="shrink-0 flex items-center gap-3 transition-all duration-500" style={{ opacity: compact ? 1 : 0, pointerEvents: compact ? 'auto' : 'none' }}>
+          <Link to="/voucher" aria-label="Find Voucher" title="Find Voucher" tabIndex={compact ? 0 : -1}
+            className="w-9 h-9 rounded-full flex items-center justify-center text-white/80 hover:text-white hover:bg-white/10" style={{ border: '1px solid rgba(255,255,255,0.3)' }}>
+            {voucherIcon}
+          </Link>
+          <Link to="/donate" className="px-5 py-2 rounded-full text-white text-sm transition-all duration-500 hover:scale-105 whitespace-nowrap" style={{ background: '#F47C20', fontWeight: 600 }} tabIndex={compact ? 0 : -1}>
+            Donate Now
+          </Link>
+        </div>
       </div>
 
       {/* Mobile menu */}
@@ -294,8 +308,13 @@ export default function Nav() {
               {label}
             </NavLink>
           ))}
+          <Link to="/voucher" onClick={() => setMobileOpen(false)}
+            className="flex items-center justify-center gap-2 mt-4 py-3 rounded-full text-white text-base"
+            style={{ border: '1px solid rgba(255,255,255,0.3)', fontWeight: 600 }}>
+            {voucherIcon} Find Voucher
+          </Link>
           <Link to="/donate" onClick={() => setMobileOpen(false)}
-            className="block mt-4 text-center py-3 rounded-full text-white text-base"
+            className="block mt-3 text-center py-3 rounded-full text-white text-base"
             style={{ background: '#F47C20', fontWeight: 600 }}>
             Donate Now
           </Link>

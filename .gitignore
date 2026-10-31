@@ -11,3 +11,7 @@ logs/
 *.log
 .claude-replay.*
 .tmp-*
+
+# Server data (form submissions, purchases) — contains personal information
+server/data/
+!.env.example

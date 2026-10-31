@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { submitForm, type FormError } from '../lib/forms'
 import { Link } from 'react-router'
 import { useInView } from '../hooks/useInView'
 
@@ -181,8 +182,22 @@ function RegisterCta() {
   const [form, setForm] = useState({ name: '', email: '', interest: '' })
   const interests = ['Education', 'Healthcare', 'Community Events', 'Disaster Relief', 'Fundraising', 'Admin Support']
 
-  const handleSubmit = () => {
-    if (form.name && form.email) setSent(true)
+  const [sending, setSending] = useState(false)
+  const [error, setError] = useState('')
+
+  const handleSubmit = async () => {
+    if (sending) return
+    if (!form.name.trim() || !form.email.trim()) { setError('Please enter your name and email address.'); return }
+    setSending(true)
+    setError('')
+    try {
+      await submitForm('volunteer', form)
+      setSent(true)
+    } catch (err) {
+      setError((err as FormError).message)
+    } finally {
+      setSending(false)
+    }
   }
 
   return (
@@ -226,10 +241,11 @@ function RegisterCta() {
                 ))}
               </div>
             </div>
-            <button onClick={handleSubmit}
-              className="w-full py-4 rounded-xl font-700 text-base transition-all duration-200 hover:scale-105"
+            {error && <p role="alert" className="text-sm mb-3 px-4 py-2.5 rounded-xl text-white" style={{ background: 'rgba(13,43,69,0.35)' }}>{error}</p>}
+            <button onClick={handleSubmit} disabled={sending}
+              className="w-full py-4 rounded-xl font-700 text-base transition-all duration-200 hover:scale-105 disabled:opacity-60 disabled:hover:scale-100"
               style={{ background: '#0D2B45', color: 'white', fontWeight: 700 }}>
-              Register as Volunteer →
+              {sending ? 'Registering…' : 'Register as Volunteer →'}
             </button>
           </div>
         )}
